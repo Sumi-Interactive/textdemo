@@ -34,9 +34,9 @@
 
 -(void)setTextFieldsArray:(NSArray *)array;
 
--(void)showPrevious;
+-(void)changeTextColorToYellow;
 
--(void)showNext;
+-(void)changeTextStyleToBold;
 
 -(void)showBar:(UITextField *)textField;
 

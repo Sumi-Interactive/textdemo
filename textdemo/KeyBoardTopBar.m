@@ -20,11 +20,11 @@
     
     if((self = [super init])) {
         
-        prevButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"上一项" style:UIBarButtonItemStyleBordered target:self action:@selector(ShowPrevious)];
+        prevButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"变绿" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextColorToYellow)];
         
-        nextButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"下一项" style:UIBarButtonItemStyleBordered target:self action:@selector(ShowNext)];
+        nextButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"加粗" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextStyleToBold)];
         
-        hiddenButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"隐藏键盘" style:UIBarButtonItemStyleBordered target:self action:@selector(HiddenKeyBoard)];
+        hiddenButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"隐藏键盘" style:UIBarButtonItemStylePlain target:self action:@selector(HiddenKeyBoard)];
         
         spaceButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         
@@ -57,75 +57,39 @@
     
 }
 
-//显示上一项
 
--(void)showPrevious{
+-(void)changeTextColorToYellow{
+    NSString *str = @"bold，little color，hello";
     
-    if (textFields==nil) {
-        
-        return;
-        
-    }
+    //NSMutableAttributedString的初始化
+    NSDictionary *attrs = @{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]};
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:str attributes:attrs];
     
-    NSInteger num = -1;
+    //NSMutableAttributedString增加属性
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:36] range:[str rangeOfString:@"bold"]];
     
-    for (NSInteger i=0; i<[textFields count]; i++) {
-        
-        if ([textFields objectAtIndex:i]==currentTextField) {
-            
-            num = i;
-            
-            break;
-            
-        }
-        
-    }
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:[str rangeOfString:@"little color"]];
     
-    if (num>0){
-        
-        [[textFields objectAtIndex:num] resignFirstResponder];
-        
-        [[textFields objectAtIndex:num-1 ] becomeFirstResponder];
-        
-        [self showBar:[textFields objectAtIndex:num-1]];
-        
-    }
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Papyrus" size:36] range:NSMakeRange(18,5)];
     
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:[str rangeOfString:@"little"]];
+    
+    //NSMutableAttributedString移除属性
+    [attributedString removeAttribute:NSFontAttributeName range:[str rangeOfString:@"little"]];
+    
+    //NSMutableAttributedString设置属性
+    NSDictionary *attrs2 = @{NSStrokeWidthAttributeName:@-5,
+                             NSStrokeColorAttributeName:[UIColor greenColor],
+                             NSFontAttributeName:[UIFont systemFontOfSize:36],
+                             NSUnderlineStyleAttributeName:@(NSUnderlineStyleSingle)};
+    [attributedString setAttributes:attrs2 range:NSMakeRange(0, 4)];
+    
+    currentTextField.attributedText = attributedString;
+
 }
 
-//显示下一项
 
--(void)showNext{
-    
-    if (textFields==nil) {
-        
-        return;
-        
-    }
-    
-    NSInteger num = -1;
-    
-    for (NSInteger i=0; i<[textFields count]; i++) {
-        
-        if ([textFields objectAtIndex:i]==currentTextField) {
-            
-            num = i;
-            
-            break;
-            
-        }
-        
-    }
-    
-    if (num<[textFields count]-1){
-        
-        [[textFields objectAtIndex:num] resignFirstResponder];
-        
-        [[textFields objectAtIndex:num+1] becomeFirstResponder];
-        
-        [self showBar:[textFields objectAtIndex:num+1]];
-        
-    }
+-(void)changeTextStyleToBold{
     
 }
 
@@ -134,7 +98,6 @@
 -(void)showBar:(UITextField *)textField{
     
     currentTextField = textField;
-    
     if (allowShowPreAndNext) {
         
         [view setItems:[NSArray arrayWithObjects:prevButtonItem,nextButtonItem,spaceButtonItem,hiddenButtonItem,nil]];
@@ -147,55 +110,10 @@
         
     }
     
-    if (textFields==nil) {
-        
-        prevButtonItem.enabled = NO;
-        
-        nextButtonItem.enabled = NO;
-        
-    }
+   
+    prevButtonItem.enabled = YES;
+    nextButtonItem.enabled = YES;
     
-    else {
-        
-        NSInteger num = -1;
-        
-        for (NSInteger i=0; i<[textFields count]; i++) {
-            
-            if ([textFields objectAtIndex:i]==currentTextField) {
-                
-                num = i;
-                
-                break;
-                
-            }
-            
-        }
-        
-        if (num>0) {
-            
-            prevButtonItem.enabled = YES;
-            
-        }
-        
-        else {
-            
-            prevButtonItem.enabled = NO;
-            
-        }
-        
-        if (num<[textFields count]-1) {
-            
-            nextButtonItem.enabled = YES;
-            
-        }
-        
-        else {
-            
-            nextButtonItem.enabled = NO;
-            
-        }
-        
-    }
     
     [UIView beginAnimations:nil context:nil];
     
