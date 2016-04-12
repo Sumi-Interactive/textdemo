@@ -27,15 +27,6 @@
                                     <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ikx-GU-EqX"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFb-pE-wg6">
-                                <rect key="frame" x="-25" y="-30" width="100" height="30"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <rect key="frame" x="0.0" y="349" width="400" height="30"/>
-                                </variation>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-SD-m9R">
                                 <rect key="frame" x="111" y="73" width="379" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,27 +45,10 @@
                                     <rect key="frame" x="0.0" y="105" width="400" height="128"/>
                                 </variation>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibk-GD-gAJ">
-                                <rect key="frame" x="96" y="431" width="384" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="HFb-pE-wg6"/>
-                                <exclude reference="Ibk-GD-gAJ"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="HFb-pE-wg6"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="label" destination="HFb-pE-wg6" id="nWC-oo-yGl"/>
                         <outlet property="textView" destination="J3z-SD-m9R" id="JVZ-Oz-dUh"/>
                     </connections>
                 </viewController>

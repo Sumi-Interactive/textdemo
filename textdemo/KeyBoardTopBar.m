@@ -20,9 +20,9 @@
     
     if((self = [super init])) {
         
-        prevButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"变绿" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextColorToYellow)];
+        bigTitleButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"大标题" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextColorToYellow)];
         
-        nextButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"加粗" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextStyleToBold)];
+        smallTitleButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"小标题" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextStyleToBold)];
         
         hiddenButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"隐藏键盘" style:UIBarButtonItemStylePlain target:self action:@selector(HiddenKeyBoard)];
         
@@ -32,28 +32,15 @@
         
         view.barStyle = UIBarStyleDefault;
         
-        view.items = [NSArray arrayWithObjects:prevButtonItem,nextButtonItem,spaceButtonItem,hiddenButtonItem,nil];
-        
-        
-        allowShowPreAndNext = YES;
+        view.items = [NSArray arrayWithObjects:bigTitleButtonItem,smallTitleButtonItem,spaceButtonItem,hiddenButtonItem,nil];
         
         textFields = nil;
         
-        isInNavigationController = YES;
-        
-        currentTextField = nil;
+        currentTextView = nil;
         
     }
     
     return self;
-    
-}
-
-//设置是否在导航视图中
-
--(void)setIsInNavigationController:(BOOL)isbool{
-    
-    isInNavigationController = isbool;
     
 }
 
@@ -84,7 +71,7 @@
                              NSUnderlineStyleAttributeName:@(NSUnderlineStyleSingle)};
     [attributedString setAttributes:attrs2 range:NSMakeRange(0, 4)];
     
-    currentTextField.attributedText = attributedString;
+    currentTextView.attributedText = attributedString;
 
 }
 
@@ -95,41 +82,17 @@
 
 //显示工具条
 
--(void)showBar:(UITextField *)textField{
+-(void)showBar:(UITextView *)textView{
     
-    currentTextField = textField;
-    if (allowShowPreAndNext) {
-        
-        [view setItems:[NSArray arrayWithObjects:prevButtonItem,nextButtonItem,spaceButtonItem,hiddenButtonItem,nil]];
-        
-    }
-    
-    else {
-        
-        [view setItems:[NSArray arrayWithObjects:spaceButtonItem,hiddenButtonItem,nil]];
-        
-    }
-    
-   
-    prevButtonItem.enabled = YES;
-    nextButtonItem.enabled = YES;
+    currentTextView = textView;
+    [view setItems:[NSArray arrayWithObjects:bigTitleButtonItem,smallTitleButtonItem,spaceButtonItem,hiddenButtonItem,nil]];
     
     
     [UIView beginAnimations:nil context:nil];
     
     [UIView setAnimationDuration:0.3];
     
-    if (isInNavigationController) {
-        
-        view.frame = CGRectMake(0, 201-40, 420, 44);
-        
-    }
-    
-    else {
-        
-        view.frame = CGRectMake(0, 420, 420, 44);
-        
-    }
+    view.frame = CGRectMake(0, 420, 420, 44);
     
     [UIView commitAnimations];
     
@@ -143,21 +106,14 @@
     
 }
 
-//设置是否显示上一项和下一项按钮
-
--(void)setAllowShowPreAndNext:(BOOL)isShow{
-    
-    allowShowPreAndNext = isShow;
-    
-}
 
 //隐藏键盘和工具条
 
 -(void)HiddenKeyBoard{
     
-    if (currentTextField!=nil) {
+    if (currentTextView!=nil) {
         
-        [currentTextField  resignFirstResponder];
+        [currentTextView  resignFirstResponder];
         
     }
     
@@ -168,26 +124,6 @@
     view.frame = CGRectMake(0, -44, 420, 44);
     view.barStyle = UIBarStyleDefault;
     [UIView commitAnimations];
-    
-}
-
-- (void)dealloc {
-    
-//    [view release];
-//    
-//    [textFields release];
-//    
-//    [prevButtonItem release];
-//    
-//    [nextButtonItem release];
-//    
-//    [hiddenButtonItem release];
-//    
-//    [currentTextField release];
-//    
-//    [spaceButtonItem release];
-//    
-//    [super dealloc];
     
 }
 

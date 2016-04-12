@@ -7,19 +7,15 @@
     
     NSArray         *textFields;                 //输入框数组
     
-    BOOL            allowShowPreAndNext;         //是否显示上一项、下一项
+    UIBarButtonItem *bigTitleButtonItem;             //上一项按钮
     
-    BOOL            isInNavigationController;    //是否在导航视图中
-    
-    UIBarButtonItem *prevButtonItem;             //上一项按钮
-    
-    UIBarButtonItem *nextButtonItem;             //下一项按钮
+    UIBarButtonItem *smallTitleButtonItem;             //下一项按钮
     
     UIBarButtonItem *hiddenButtonItem;           //隐藏按钮
     
     UIBarButtonItem *spaceButtonItem;            //空白按钮
     
-    UITextField     *currentTextField;           //当前输入框
+    UITextView     *currentTextView;           //当前输入框
     
 }
 
@@ -28,17 +24,13 @@
 
 -(id)init;
 
--(void)setAllowShowPreAndNext:(BOOL)isShow;
-
--(void)setIsInNavigationController:(BOOL)isbool;
-
 -(void)setTextFieldsArray:(NSArray *)array;
 
 -(void)changeTextColorToYellow;
 
 -(void)changeTextStyleToBold;
 
--(void)showBar:(UITextField *)textField;
+-(void)showBar:(UITextView *)textView;
 
 -(void)HiddenKeyBoard;
 

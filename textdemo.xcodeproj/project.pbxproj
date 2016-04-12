@@ -129,16 +129,16 @@
 			isa = PBXGroup;
 			children = (
 				D09164971CBB7DF1004B7C0B /* AppDelegate.h */,
-				D09164981CBB7DF1004B7C0B /* AppDelegate.m */,
+				D0EE995C1CBB9CD800849E49 /* KeyboardTopBar.h */,
 				D091649A1CBB7DF1004B7C0B /* ViewController.h */,
+				D09164981CBB7DF1004B7C0B /* AppDelegate.m */,
+				D0EE995D1CBB9CFF00849E49 /* KeyBoardTopBar.m */,
 				D091649B1CBB7DF1004B7C0B /* ViewController.m */,
-				D091649D1CBB7DF1004B7C0B /* Main.storyboard */,
+				D09164A51CBB7DF1004B7C0B /* Info.plist */,
 				D09164A01CBB7DF1004B7C0B /* Assets.xcassets */,
 				D09164A21CBB7DF1004B7C0B /* LaunchScreen.storyboard */,
-				D09164A51CBB7DF1004B7C0B /* Info.plist */,
+				D091649D1CBB7DF1004B7C0B /* Main.storyboard */,
 				D09164941CBB7DF1004B7C0B /* Supporting Files */,
-				D0EE995C1CBB9CD800849E49 /* KeyboardTopBar.h */,
-				D0EE995D1CBB9CFF00849E49 /* KeyBoardTopBar.m */,
 			);
 			path = textdemo;
 			sourceTree = "<group>";
