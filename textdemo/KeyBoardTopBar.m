@@ -22,7 +22,13 @@
         
         bigTitleButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"大标题" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextColorToYellow)];
         
-        smallTitleButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"小标题" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextStyleToBold)];
+        smallTitleButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"小标题" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextColorToYellow)];
+        
+        orderListButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"有序" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextColorToYellow)];
+        
+        unorderListButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"无序" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextStyleToBold)];
+        
+        checkListButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"核查" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextColorToYellow)];
         
         hiddenButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"隐藏键盘" style:UIBarButtonItemStylePlain target:self action:@selector(HiddenKeyBoard)];
         
@@ -32,9 +38,15 @@
         
         view.barStyle = UIBarStyleDefault;
         
-        view.items = [NSArray arrayWithObjects:bigTitleButtonItem,smallTitleButtonItem,spaceButtonItem,hiddenButtonItem,nil];
-        
-        textFields = nil;
+        view.items = [NSArray arrayWithObjects:
+                      bigTitleButtonItem,
+                      smallTitleButtonItem,
+                      orderListButtonItem,
+                      unorderListButtonItem,
+                      checkListButtonItem,
+                      spaceButtonItem,
+                      hiddenButtonItem,
+                      nil];
         
         currentTextView = nil;
         
@@ -85,7 +97,15 @@
 -(void)showBar:(UITextView *)textView{
     
     currentTextView = textView;
-    [view setItems:[NSArray arrayWithObjects:bigTitleButtonItem,smallTitleButtonItem,spaceButtonItem,hiddenButtonItem,nil]];
+    [view setItems:[NSArray arrayWithObjects:
+                    bigTitleButtonItem,
+                    smallTitleButtonItem,
+                    orderListButtonItem,
+                    unorderListButtonItem,
+                    checkListButtonItem,
+                    spaceButtonItem,
+                    hiddenButtonItem,
+                    nil]];
     
     
     [UIView beginAnimations:nil context:nil];
@@ -97,15 +117,6 @@
     [UIView commitAnimations];
     
 }
-
-//设置输入框数组
-
--(void)setTextFieldsArray:(NSArray *)array{
-    
-    textFields = array;
-    
-}
-
 
 //隐藏键盘和工具条
 

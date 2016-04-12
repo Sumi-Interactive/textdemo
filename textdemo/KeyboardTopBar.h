@@ -3,19 +3,23 @@
 
 @interface KeyBoardTopBar : NSObject {
     
-    UIToolbar       *view;                       //工具条
+    UIToolbar       *view;
     
-    NSArray         *textFields;                 //输入框数组
+    UIBarButtonItem *bigTitleButtonItem;
     
-    UIBarButtonItem *bigTitleButtonItem;             //上一项按钮
+    UIBarButtonItem *smallTitleButtonItem;
     
-    UIBarButtonItem *smallTitleButtonItem;             //下一项按钮
+    UIBarButtonItem *orderListButtonItem;
     
-    UIBarButtonItem *hiddenButtonItem;           //隐藏按钮
+    UIBarButtonItem *unorderListButtonItem;
+
+    UIBarButtonItem *checkListButtonItem;
     
-    UIBarButtonItem *spaceButtonItem;            //空白按钮
+    UIBarButtonItem *hiddenButtonItem;
     
-    UITextView     *currentTextView;           //当前输入框
+    UIBarButtonItem *spaceButtonItem;
+    
+    UITextView     *currentTextView;
     
 }
 
@@ -23,8 +27,6 @@
 
 
 -(id)init;
-
--(void)setTextFieldsArray:(NSArray *)array;
 
 -(void)changeTextColorToYellow;
 

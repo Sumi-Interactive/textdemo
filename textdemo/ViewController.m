@@ -23,7 +23,6 @@
     self.textView.delegate=self;
     
     keyboardbar = [[KeyBoardTopBar alloc]init];
-    [keyboardbar setTextFieldsArray:editFieldArray];
     [self.view addSubview:keyboardbar.view];
 
     // Do any additional setup after loading the view, typically from a nib.
