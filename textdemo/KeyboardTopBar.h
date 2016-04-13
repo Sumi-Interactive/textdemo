@@ -36,10 +36,16 @@
 
 -(void)changeTextToSmallTitle;
 
+-(void)addUnorderList;
+
+-(void)addOrderList;
+
 -(void)showBar:(UITextView *)textView;
 
 -(void)hideKeyBoard;
 
 -(void)changeTextFontStyle;
+
+-(void) dealWithTitle:(int)font;
 
 @end
