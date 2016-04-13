@@ -21,6 +21,8 @@
     
     UITextView     *currentTextView;
     
+    NSMutableDictionary *style;
+    
 }
 
 @property(nonatomic,retain) UIToolbar *view;
@@ -30,10 +32,14 @@
 
 -(void)changeTextColorToYellow;
 
--(void)changeTextStyleToBold;
+-(void)changeTextToBigTitle;
+
+-(void)changeTextToSmallTitle;
 
 -(void)showBar:(UITextView *)textView;
 
--(void)HiddenKeyBoard;
+-(void)hideKeyBoard;
+
+-(void)changeTextFontStyle;
 
 @end
