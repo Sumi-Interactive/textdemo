@@ -84,8 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-textdemo/RichEditorView.framework"
+  install_framework "Pods-textdemo/YYText.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-textdemo/RichEditorView.framework"
+  install_framework "Pods-textdemo/YYText.framework"
 fi

@@ -1,10 +1,10 @@
 PODS:
-  - RichEditorView (3.2.0)
+  - YYText (1.0.4)
 
 DEPENDENCIES:
-  - RichEditorView
+  - YYText
 
 SPEC CHECKSUMS:
-  RichEditorView: b4ee60a4f5301cbe8f3fcb1f065cdd7de74ddd10
+  YYText: 41761822986179828a27ccf82aa97c7b5483c2e2
 
 COCOAPODS: 0.39.0

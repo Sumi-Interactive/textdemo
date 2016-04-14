@@ -30,7 +30,7 @@
 
 -(id)init;
 
--(void)changeTextColorToYellow;
+-(void)addCheckButton;
 
 -(void)changeTextToBigTitle;
 
@@ -47,5 +47,13 @@
 -(void)changeTextFontStyle;
 
 -(void) dealWithTitle:(int)font;
+
+-(CGRect)frameOfTextRange:(NSRange)range inTextView:(UITextView *)textView;
+
+-(void)deleteCheckButton;
+
+-(int) getWhichParaCursonIn:(NSMutableArray *)result;
+
+-(int) getParaLocCursonIn:(NSMutableArray *)result;
 
 @end

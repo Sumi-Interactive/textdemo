@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RichEditorView.xcscheme</key>
+		<key>YYText.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4A03FCE4EA10B27BBECD4381E3F56179</key>
+		<key>D71F859DC0E1CD5C157100C35012387D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96915F589513C19D039127DF189112F0</key>
+		<key>EFFE3E13494FC9A71561D04E55FDB66B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

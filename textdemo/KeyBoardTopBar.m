@@ -7,7 +7,7 @@
 //
 
 #import "KeyBoardTopBar.h"
-
+#import <YYText/YYText.h>
 
 @implementation KeyBoardTopBar
 
@@ -28,7 +28,7 @@
         
         unorderListButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"无序" style:UIBarButtonItemStylePlain target:self action:@selector(addUnorderList)];
         
-        checkListButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"核查" style:UIBarButtonItemStylePlain target:self action:@selector(changeTextColorToYellow)];
+        checkListButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"核查" style:UIBarButtonItemStylePlain target:self action:@selector(addCheckButton)];
         
         hiddenButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"隐藏键盘" style:UIBarButtonItemStylePlain target:self action:@selector(hideKeyBoard)];
         
@@ -49,33 +49,37 @@
 }
 
 
--(void)changeTextColorToYellow {
-    NSString *str = @"bold，little color，hello";
+-(void)addCheckButton {
 
-    //NSMutableAttributedString的初始化
-    NSDictionary *attrs = @{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]};
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:str attributes:attrs];
-
-    //NSMutableAttributedString增加属性
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:36] range:[str rangeOfString:@""]];
+    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+    int loc = [self getParaLocCursonIn:result];
     
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:[str rangeOfString:@"little color"]];
+    CGRect rect = [self frameOfTextRange:NSMakeRange(loc, 0) inTextView:currentTextView];
     
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Papyrus" size:36] range:NSMakeRange(18,5)];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(rect.origin.x, rect.origin.y, 10, 10);
+    [btn setTitle:@"R" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor blueColor];
+    [btn addTarget:self action:@selector(addOrderList) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTag:rect.origin.y];
+    [currentTextView addSubview:btn];
     
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:[str rangeOfString:@"little"]];
+    CGRect convertedFrame = [currentTextView convertRect:btn.frame fromView:currentTextView];
+    NSMutableArray *l = [[currentTextView textContainer].exclusionPaths mutableCopy];
+    [l addObject:[UIBezierPath bezierPathWithRect:convertedFrame]];
+    [[currentTextView textContainer] setExclusionPaths:l];
     
-    //NSMutableAttributedString移除属性
-    [attributedString removeAttribute:NSFontAttributeName range:[str rangeOfString:@"little"]];
     
-    //NSMutableAttributedString设置属性
-    NSDictionary *attrs2 = @{NSStrokeWidthAttributeName:@-5,
-                             NSStrokeColorAttributeName:[UIColor greenColor],
-                             NSFontAttributeName:[UIFont systemFontOfSize:36],
-                             NSUnderlineStyleAttributeName:@(NSUnderlineStyleSingle)};
-    [attributedString setAttributes:attrs2 range:NSMakeRange(0, 4)];
     
-    currentTextView.attributedText = attributedString;
+//    
+//    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+//    UIImage * image1 = [UIImage imageNamed:@"010"];
+//    NSTextAttachment * attachment1 = [[NSTextAttachment alloc] init];
+//    attachment1.bounds = CGRectMake(0, 0, 30, 30);
+//    attachment1.image = image1;
+//    NSAttributedString * attachStr1 = [NSAttributedString attributedStringWithAttachment:attachment1];
+//    [mutStr insertAttributedString:attachStr1 atIndex:50];
+//    currentTextView.attributedText = [mutStr copy];
 
 }
 
@@ -94,25 +98,8 @@
 
 -(void)addUnorderList {
     NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-    NSMutableArray *offset = [[NSMutableArray alloc] init];
-    int count = (int)result.count;
-    int loc = (int)currentTextView.selectedRange.location;
-    int row = 0;
    
-    for (int i=0,foo=0; i<count; i++) {
-        [offset addObject:[NSNumber numberWithInt:foo]];
-        foo = foo + (int)[result[i] length] + 1;
-        if (count-1==i)
-            [offset addObject:[NSNumber numberWithInt:foo]];
-    }
-    
-    for (int i=0; i<count; i++) {
-        
-        if ( loc>=[offset[i] intValue]&&loc<[offset[i+1] intValue]) {
-            row = i;
-            break;
-        }
-    }
+    int row = [self getWhichParaCursonIn:result];
    
     result[row]= [NSString stringWithFormat:@"- %@",result[row]];
     
@@ -184,5 +171,79 @@
 -(void)changeTextFontStyle {
     currentTextView.typingAttributes = style;
 }
+
+- (CGRect)frameOfTextRange:(NSRange)range inTextView:(UITextView *)textView
+{
+    UITextPosition *beginning = textView.beginningOfDocument;
+    UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
+    UITextPosition *end = [textView positionFromPosition:start offset:range.length];
+    UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
+    CGRect rect = [textView firstRectForRange:textRange];
+    return [textView convertRect:rect fromView:textView.textInputView];
+}
+
+-(void)deleteCheckButton {
+    CGRect cursor = [self frameOfTextRange:NSMakeRange(currentTextView.selectedRange.location, 0) inTextView:currentTextView];
+    
+    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+    int loc = [self getParaLocCursonIn:result];
+    CGRect paraIndex = [self frameOfTextRange:NSMakeRange(loc, 0) inTextView:currentTextView];
+    if (cursor.origin.x<35 && cursor.origin.y==paraIndex.origin.y ){
+        for (UIView *subviews in [currentTextView subviews]) {
+            if (subviews.tag==paraIndex.origin.y) {
+                NSMutableArray *l = [[currentTextView textContainer].exclusionPaths mutableCopy];
+                CGRect btnRect = subviews.frame;
+                [l removeObject:[UIBezierPath bezierPathWithRect:btnRect]];
+                [[currentTextView textContainer] setExclusionPaths:l];
+                [subviews removeFromSuperview];
+            }
+        }
+    }
+}
+
+-(int) getWhichParaCursonIn:(NSMutableArray *)result {
+    int count = (int)result.count;
+    int loc = (int)currentTextView.selectedRange.location;
+    int row = 0;
+    NSMutableArray *offset = [[NSMutableArray alloc] init];
+    for (int i=0,foo=0; i<count; i++) {
+        [offset addObject:[NSNumber numberWithInt:foo]];
+        foo = foo + (int)[result[i] length] + 1;
+        if (count-1==i)
+            [offset addObject:[NSNumber numberWithInt:foo]];
+    }
+    
+    for (int i=0; i<count; i++) {
+        
+        if ( loc>=[offset[i] intValue]&&loc<[offset[i+1] intValue]) {
+            row = i;
+            break;
+        }
+    }
+    return row;
+}
+
+-(int) getParaLocCursonIn:(NSMutableArray *)result {
+    int count = (int)result.count;
+    int loc = (int)currentTextView.selectedRange.location;
+    int row = 0;
+    NSMutableArray *offset = [[NSMutableArray alloc] init];
+    for (int i=0,foo=0; i<count; i++) {
+        [offset addObject:[NSNumber numberWithInt:foo]];
+        foo = foo + (int)[result[i] length] + 1;
+        if (count-1==i)
+            [offset addObject:[NSNumber numberWithInt:foo]];
+    }
+    
+    for (int i=0; i<count; i++) {
+        
+        if ( loc>=[offset[i] intValue]&&loc<[offset[i+1] intValue]) {
+            row = [offset[i] intValue];
+            break;
+        }
+    }
+    return row;
+}
+
 
 @end

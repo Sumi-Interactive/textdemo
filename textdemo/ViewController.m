@@ -21,7 +21,6 @@
     self.textView.layer.borderWidth = 1;
     self.textView.keyboardType = UIKeyboardTypeDefault;
     self.textView.delegate=self;
-    
     keyboardbar = [[KeyBoardTopBar alloc]init];
     [self.view addSubview:keyboardbar.view];
 
@@ -38,5 +37,15 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     [keyboardbar showBar:textView];//KeyBoardTopBar的实例对象调用显示键盘方法
 }
+- (BOOL)textView:(UITextView *)textField shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if([text length] != 0) {//点击了非删除键
+        NSLog(@"wtf");
+    } else {
+        [keyboardbar deleteCheckButton];
+    }
+    return YES;
+}
+
 
 @end

@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'textdemo' do
-  pod 'RichEditorView'
+  pod 'YYText'
 end
 
 target 'textdemoTests' do
