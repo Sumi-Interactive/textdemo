@@ -32,7 +32,7 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="38" width="414" height="183"/>
+                                    <rect key="frame" x="0.0" y="38" width="414" height="697"/>
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="RGq-9J-gcn" appends="YES" id="afE-zg-jLz"/>
