@@ -10,15 +10,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="puC-mF-Xg0"/>
+                        <viewControllerLayoutGuide type="bottom" id="l5N-wT-VGx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-SD-m9R">
-                                <rect key="frame" x="110" y="93" width="379" height="415"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-SD-m9R">
+                                <rect key="frame" x="0.0" y="30" width="320" height="390"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <attributedString key="attributedText">
@@ -31,27 +31,18 @@
                                     </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <rect key="frame" x="0.0" y="105" width="400" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="38" width="414" height="183"/>
                                 </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="RGq-9J-gcn" appends="YES" id="afE-zg-jLz"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwc-Gs-PCe">
-                                <rect key="frame" x="277" y="528" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="177" y="241" width="46" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ikx-GU-EqX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="800"/>
                     <connections>
                         <outlet property="tapTextView" destination="RGq-9J-gcn" id="Ls5-14-U1L"/>
                         <outlet property="textView" destination="J3z-SD-m9R" id="JVZ-Oz-dUh"/>
@@ -60,7 +51,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="RGq-9J-gcn" customClass="HPTextViewTapGestureRecognizer"/>
             </objects>
-            <point key="canvasLocation" x="219" y="339"/>
+            <point key="canvasLocation" x="217.5" y="337.5"/>
         </scene>
     </scenes>
 </document>

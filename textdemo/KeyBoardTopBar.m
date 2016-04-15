@@ -13,9 +13,6 @@
 
 @synthesize view;
 
-
-//初始化控件和变量
-
 -(id)init:(UITextView *)textView{
     
     if((self = [super init])) {
@@ -34,7 +31,7 @@
         
         spaceButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         
-        view = [[UIToolbar alloc] initWithFrame:CGRectMake(0,-44,420,44)];
+        view = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,400,44)];
         
         view.barStyle = UIBarStyleDefault;
         
@@ -52,8 +49,6 @@
                         hiddenButtonItem,
                         nil]];
         
-        //view.frame = CGRectMake(0, 420, 420, 44);
-        
         currentTextView.inputAccessoryView = view;
         
     }
@@ -65,28 +60,6 @@
 
 -(void)addCheckButton {
     
-
-//    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-//    int loc = [self getParaLocCursonIn:result];
-//    
-//    CGRect rect = [self frameOfTextRange:NSMakeRange(loc, 0) inTextView:currentTextView];
-//    
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-//    btn.frame = CGRectMake(rect.origin.x, rect.origin.y, 10, 10);
-//    [btn setTitle:@"R" forState:UIControlStateNormal];
-//    btn.backgroundColor = [UIColor blueColor];
-//    [btn addTarget:self action:@selector(addOrderList) forControlEvents:UIControlEventTouchUpInside];
-//    [btn setTag:rect.origin.y];
-//    [currentTextView addSubview:btn];
-//    
-//    CGRect convertedFrame = [currentTextView convertRect:btn.frame fromView:currentTextView];
-//    NSMutableArray *l = [[currentTextView textContainer].exclusionPaths mutableCopy];
-//    [l addObject:[UIBezierPath bezierPathWithRect:convertedFrame]];
-//    [[currentTextView textContainer] setExclusionPaths:l];
-//    
-//    
-//    
-//
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
     NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
     attachment.bounds = CGRectMake(0, 0, 30, 30);
@@ -102,47 +75,14 @@
 }
 
 -(void)changeTextToBigTitle {
-    [self dealWithTitle:25];
+    [self dealWithTitle:30];
 }
 
 
 -(void)changeTextToSmallTitle {
-    [self dealWithTitle:20];
+    [self dealWithTitle:25];
 }
 
--(void)addOrderList {
-    NSLog(@"memeda1");
-}
-
--(void)addUnorderList {
-    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-   
-    int row = [self getWhichParaCursonIn:result];
-   
-    result[row]= [NSString stringWithFormat:@"- %@",result[row]];
-    
-    currentTextView.text = [result componentsJoinedByString:@"\n"];
-
-}
-
-//隐藏键盘和工具条
-
--(void)hideKeyBoard {
-    
-    if (currentTextView!=nil) {
-        
-        [currentTextView  resignFirstResponder];
-        
-    }
-    
-    [UIView beginAnimations:nil context:nil];
-    
-    [UIView setAnimationDuration:0.3];
-    
-    view.barStyle = UIBarStyleDefault;
-    [UIView commitAnimations];
-    
-}
 -(void) dealWithTitle:(int)font {
     if (currentTextView.selectedRange.length==0) {
         [style setValue:[UIFont systemFontOfSize:font] forKey:NSFontAttributeName];
@@ -163,33 +103,45 @@
     currentTextView.typingAttributes = style;
 }
 
-- (CGRect)frameOfTextRange:(NSRange)range inTextView:(UITextView *)textView
-{
+-(void)addOrderList {
+    NSLog(@"memeda1");
+}
+
+-(void)addUnorderList {
+    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+   
+    int row = [self getWhichParaCursonIn:result];
+   
+    result[row]= [NSString stringWithFormat:@"- %@",result[row]];
+    
+    currentTextView.text = [result componentsJoinedByString:@"\n"];
+
+}
+
+-(void)hideKeyBoard {
+    
+    if (currentTextView!=nil) {
+        
+        [currentTextView  resignFirstResponder];
+        
+    }
+    
+    [UIView beginAnimations:nil context:nil];
+    
+    [UIView setAnimationDuration:0.3];
+    
+    view.barStyle = UIBarStyleDefault;
+    [UIView commitAnimations];
+    
+}
+
+- (CGRect)frameOfTextRange:(NSRange)range inTextView:(UITextView *)textView {
     UITextPosition *beginning = textView.beginningOfDocument;
     UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
     UITextPosition *end = [textView positionFromPosition:start offset:range.length];
     UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
     CGRect rect = [textView firstRectForRange:textRange];
     return [textView convertRect:rect fromView:textView.textInputView];
-}
-
--(void)deleteCheckButton {
-    CGRect cursor = [self frameOfTextRange:NSMakeRange(currentTextView.selectedRange.location, 0) inTextView:currentTextView];
-    
-    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-    int loc = [self getParaLocCursonIn:result];
-    CGRect paraIndex = [self frameOfTextRange:NSMakeRange(loc, 0) inTextView:currentTextView];
-    if (cursor.origin.x<35 && cursor.origin.y==paraIndex.origin.y ){
-        for (UIView *subviews in [currentTextView subviews]) {
-            if (subviews.tag==paraIndex.origin.y) {
-                NSMutableArray *l = [[currentTextView textContainer].exclusionPaths mutableCopy];
-                CGRect btnRect = subviews.frame;
-                [l removeObject:[UIBezierPath bezierPathWithRect:btnRect]];
-                [[currentTextView textContainer] setExclusionPaths:l];
-                [subviews removeFromSuperview];
-            }
-        }
-    }
 }
 
 -(int) getWhichParaCursonIn:(NSMutableArray *)result {

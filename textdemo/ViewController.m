@@ -21,22 +21,14 @@
     [super viewDidLoad];
     
     self.textView.layer.borderWidth = 1;
-    //self.textView.keyboardType = UIKeyboardTypeDefault;
     self.textView.delegate=self;
     keyboardbar = [[KeyBoardTopBar alloc]init:self.textView];
     self.tapTextView.delegate = self;
 }
-- (IBAction)click:(id)sender {
-    self.textView.text = @"aiguo";
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-//- (void)textViewDidBeginEditing:(UITextView *)textView{
-//    [keyboardbar showBar:textView];//KeyBoardTopBar的实例对象调用显示键盘方法
-//}
 -(void)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer handleTapOnTextAttachment:(NSTextAttachment*)textAttachment inRange:(NSRange)characterRange
 {
     NSMutableAttributedString * mutStr = [self.textView.attributedText mutableCopy];

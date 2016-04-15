@@ -48,8 +48,6 @@
 
 -(CGRect)frameOfTextRange:(NSRange)range inTextView:(UITextView *)textView;
 
--(void)deleteCheckButton;
-
 -(int) getWhichParaCursonIn:(NSMutableArray *)result;
 
 -(int) getParaLocCursonIn:(NSMutableArray *)result;
