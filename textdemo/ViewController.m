@@ -24,6 +24,34 @@
     self.textView.delegate=self;
     keyboardbar = [[KeyBoardTopBar alloc]init:self.textView];
     self.tapTextView.delegate = self;
+    
+    //注册通知,监听键盘出现
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(handleKeyboardDidShow:)
+                                                name:UIKeyboardDidShowNotification
+                                              object:nil];
+    //注册通知，监听键盘消失事件
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(handleKeyboardDidHidden)
+                                                name:UIKeyboardDidHideNotification
+                                              object:nil];
+}
+
+//监听事件
+- (void)handleKeyboardDidShow:(NSNotification*)paramNotification
+{
+    //获取键盘高度
+    NSValue *keyboardRectAsObject=[[paramNotification userInfo]objectForKey:UIKeyboardFrameEndUserInfoKey];
+    
+    CGRect keyboardRect;
+    [keyboardRectAsObject getValue:&keyboardRect];
+    
+    self.textView.contentInset=UIEdgeInsetsMake(0, 0,keyboardRect.size.height, 0);
+}
+
+- (void)handleKeyboardDidHidden
+{
+    self.textView.contentInset=UIEdgeInsetsZero;
 }
 
 - (void)didReceiveMemoryWarning {
