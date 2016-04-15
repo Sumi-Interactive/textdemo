@@ -16,7 +16,7 @@
 
 //初始化控件和变量
 
--(id)init{
+-(id)init:(UITextView *)textView{
     
     if((self = [super init])) {
         
@@ -38,9 +38,23 @@
         
         view.barStyle = UIBarStyleDefault;
         
-        currentTextView = nil;
-        
         style = [[NSMutableDictionary alloc] init];
+        
+        currentTextView = textView;
+        
+        [view setItems:[NSArray arrayWithObjects:
+                        bigTitleButtonItem,
+                        smallTitleButtonItem,
+                        orderListButtonItem,
+                        unorderListButtonItem,
+                        checkListButtonItem,
+                        spaceButtonItem,
+                        hiddenButtonItem,
+                        nil]];
+        
+        //view.frame = CGRectMake(0, 420, 420, 44);
+        
+        currentTextView.inputAccessoryView = view;
         
     }
     
@@ -111,32 +125,6 @@
 
 }
 
-//显示工具条
-
--(void)showBar:(UITextView *)textView {
-    
-    currentTextView = textView;
-    [view setItems:[NSArray arrayWithObjects:
-                    bigTitleButtonItem,
-                    smallTitleButtonItem,
-                    orderListButtonItem,
-                    unorderListButtonItem,
-                    checkListButtonItem,
-                    spaceButtonItem,
-                    hiddenButtonItem,
-                    nil]];
-    
-    
-    [UIView beginAnimations:nil context:nil];
-    
-    [UIView setAnimationDuration:0.3];
-    
-    view.frame = CGRectMake(0, 420, 420, 44);
-    
-    [UIView commitAnimations];
-    
-}
-
 //隐藏键盘和工具条
 
 -(void)hideKeyBoard {
@@ -151,7 +139,6 @@
     
     [UIView setAnimationDuration:0.3];
     
-    view.frame = CGRectMake(0, -44, 420, 44);
     view.barStyle = UIBarStyleDefault;
     [UIView commitAnimations];
     
@@ -248,11 +235,4 @@
     }
     return row;
 }
-
--(void)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer handleTapOnTextAttachment:(NSTextAttachment*)textAttachment inRange:(NSRange)characterRange
-{
-    NSLog(@"%@",@"langker");
-}
-
-
 @end

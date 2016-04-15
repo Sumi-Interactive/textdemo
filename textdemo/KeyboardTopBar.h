@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 
-@interface KeyBoardTopBar : NSObject<HPTextViewTapGestureRecognizerDelegate> {
+@interface KeyBoardTopBar : UIViewController<HPTextViewTapGestureRecognizerDelegate> {
     
     UIToolbar       *view;
     
@@ -28,7 +28,7 @@
 @property(nonatomic,retain) UIToolbar *view;
 
 
--(id)init;
+-(id)init:(UITextView *)textView;
 
 -(void)addCheckButton;
 
@@ -39,8 +39,6 @@
 -(void)addUnorderList;
 
 -(void)addOrderList;
-
--(void)showBar:(UITextView *)textView;
 
 -(void)hideKeyBoard;
 
