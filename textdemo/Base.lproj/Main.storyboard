@@ -34,6 +34,9 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <rect key="frame" x="0.0" y="105" width="400" height="128"/>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RGq-9J-gcn" appends="YES" id="afE-zg-jLz"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwc-Gs-PCe">
                                 <rect key="frame" x="277" y="528" width="46" height="30"/>
@@ -49,10 +52,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="tapTextView" destination="RGq-9J-gcn" id="Ls5-14-U1L"/>
                         <outlet property="textView" destination="J3z-SD-m9R" id="JVZ-Oz-dUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="RGq-9J-gcn" customClass="HPTextViewTapGestureRecognizer"/>
             </objects>
             <point key="canvasLocation" x="219" y="339"/>
         </scene>

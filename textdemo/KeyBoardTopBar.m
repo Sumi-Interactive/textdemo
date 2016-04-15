@@ -7,7 +7,7 @@
 //
 
 #import "KeyBoardTopBar.h"
-#import <YYText/YYText.h>
+#import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 
 @implementation KeyBoardTopBar
 
@@ -50,36 +50,40 @@
 
 
 -(void)addCheckButton {
+    
 
-    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-    int loc = [self getParaLocCursonIn:result];
-    
-    CGRect rect = [self frameOfTextRange:NSMakeRange(loc, 0) inTextView:currentTextView];
-    
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    btn.frame = CGRectMake(rect.origin.x, rect.origin.y, 10, 10);
-    [btn setTitle:@"R" forState:UIControlStateNormal];
-    btn.backgroundColor = [UIColor blueColor];
-    [btn addTarget:self action:@selector(addOrderList) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTag:rect.origin.y];
-    [currentTextView addSubview:btn];
-    
-    CGRect convertedFrame = [currentTextView convertRect:btn.frame fromView:currentTextView];
-    NSMutableArray *l = [[currentTextView textContainer].exclusionPaths mutableCopy];
-    [l addObject:[UIBezierPath bezierPathWithRect:convertedFrame]];
-    [[currentTextView textContainer] setExclusionPaths:l];
-    
-    
-    
+//    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+//    int loc = [self getParaLocCursonIn:result];
 //    
-//    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-//    UIImage * image1 = [UIImage imageNamed:@"010"];
-//    NSTextAttachment * attachment1 = [[NSTextAttachment alloc] init];
-//    attachment1.bounds = CGRectMake(0, 0, 30, 30);
-//    attachment1.image = image1;
-//    NSAttributedString * attachStr1 = [NSAttributedString attributedStringWithAttachment:attachment1];
-//    [mutStr insertAttributedString:attachStr1 atIndex:50];
-//    currentTextView.attributedText = [mutStr copy];
+//    CGRect rect = [self frameOfTextRange:NSMakeRange(loc, 0) inTextView:currentTextView];
+//    
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    btn.frame = CGRectMake(rect.origin.x, rect.origin.y, 10, 10);
+//    [btn setTitle:@"R" forState:UIControlStateNormal];
+//    btn.backgroundColor = [UIColor blueColor];
+//    [btn addTarget:self action:@selector(addOrderList) forControlEvents:UIControlEventTouchUpInside];
+//    [btn setTag:rect.origin.y];
+//    [currentTextView addSubview:btn];
+//    
+//    CGRect convertedFrame = [currentTextView convertRect:btn.frame fromView:currentTextView];
+//    NSMutableArray *l = [[currentTextView textContainer].exclusionPaths mutableCopy];
+//    [l addObject:[UIBezierPath bezierPathWithRect:convertedFrame]];
+//    [[currentTextView textContainer] setExclusionPaths:l];
+//    
+//    
+//    
+//
+    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+    NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
+    attachment.bounds = CGRectMake(0, 0, 30, 30);
+    attachment.image = [UIImage imageNamed:@"010"];
+    [attachment.image setAccessibilityIdentifier:@"unchecked"];
+    NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
+    
+    int loc = [self getParaLocCursonIn:[[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy] ];
+    
+    [mutStr insertAttributedString:attachStr atIndex:loc];
+    currentTextView.attributedText = [mutStr copy];
 
 }
 
@@ -243,6 +247,11 @@
         }
     }
     return row;
+}
+
+-(void)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer handleTapOnTextAttachment:(NSTextAttachment*)textAttachment inRange:(NSRange)characterRange
+{
+    NSLog(@"%@",@"langker");
 }
 
 

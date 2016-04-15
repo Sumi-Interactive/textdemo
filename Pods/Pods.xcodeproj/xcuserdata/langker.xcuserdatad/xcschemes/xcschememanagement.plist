@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-textdemo.xcscheme</key>
+		<key>HPTextViewTapGestureRecognizer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>YYText.xcscheme</key>
+		<key>Pods-textdemo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>D71F859DC0E1CD5C157100C35012387D</key>
+		<key>2954656DA976C64CF9781CF73B63DB93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EFFE3E13494FC9A71561D04E55FDB66B</key>
+		<key>B96117544341BD7E3E18DF19E30BCC5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

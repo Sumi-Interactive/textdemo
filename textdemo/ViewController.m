@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 
-@interface ViewController () <UITextViewDelegate,UITextFieldDelegate>
+@interface ViewController () <UITextViewDelegate,UITextFieldDelegate,HPTextViewTapGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet HPTextViewTapGestureRecognizer *tapTextView;
 
 @end
 
@@ -22,6 +24,7 @@
     self.textView.keyboardType = UIKeyboardTypeDefault;
     self.textView.delegate=self;
     keyboardbar = [[KeyBoardTopBar alloc]init];
+    self.tapTextView.delegate = self;
     [self.view addSubview:keyboardbar.view];
 
     // Do any additional setup after loading the view, typically from a nib.
@@ -37,15 +40,27 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     [keyboardbar showBar:textView];//KeyBoardTopBar的实例对象调用显示键盘方法
 }
-- (BOOL)textView:(UITextView *)textField shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+-(void)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer handleTapOnTextAttachment:(NSTextAttachment*)textAttachment inRange:(NSRange)characterRange
 {
-    if([text length] != 0) {//点击了非删除键
-        NSLog(@"wtf");
-    } else {
-        [keyboardbar deleteCheckButton];
+    NSMutableAttributedString * mutStr = [self.textView.attributedText mutableCopy];
+    [mutStr deleteCharactersInRange:characterRange];
+    NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
+    attachment.bounds = CGRectMake(0, 0, 30, 30);
+    if ([textAttachment.image.accessibilityIdentifier isEqualToString: @"unchecked"])  {
+        attachment.image = [UIImage imageNamed:@"011"];
+        [attachment.image setAccessibilityIdentifier:@"checked"];
+        NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
+        
+        [mutStr insertAttributedString:attachStr atIndex:characterRange.location];
+        self.textView.attributedText = [mutStr copy];
+    } else if ([textAttachment.image.accessibilityIdentifier isEqualToString:@"checked"]) {
+        attachment.image = [UIImage imageNamed:@"010"];
+        [attachment.image setAccessibilityIdentifier:@"unchecked"];
+        NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
+        
+        [mutStr insertAttributedString:attachStr atIndex:characterRange.location];
+        self.textView.attributedText = [mutStr copy];
     }
-    return YES;
 }
-
 
 @end

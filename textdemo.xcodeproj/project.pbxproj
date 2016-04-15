@@ -18,6 +18,7 @@
 		D09164BA1CBB7DF1004B7C0B /* textdemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D09164B91CBB7DF1004B7C0B /* textdemoUITests.m */; };
 		D0EE995E1CBB9CFF00849E49 /* KeyBoardTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE995D1CBB9CFF00849E49 /* KeyBoardTopBar.m */; };
 		D0F05C9C1CBF339800005DDC /* 010.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F05C9B1CBF339800005DDC /* 010.png */; };
+		D0F131A41CC0946100ABAD3C /* 011.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F131A31CC0946100ABAD3C /* 011.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D0EE995C1CBB9CD800849E49 /* KeyboardTopBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardTopBar.h; sourceTree = "<group>"; };
 		D0EE995D1CBB9CFF00849E49 /* KeyBoardTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardTopBar.m; sourceTree = "<group>"; };
 		D0F05C9B1CBF339800005DDC /* 010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 010.png; path = ../../../../Desktop/010.png; sourceTree = "<group>"; };
+		D0F131A31CC0946100ABAD3C /* 011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 011.png; path = ../../../../Desktop/011.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		D0F05C9A1CBF334D00005DDC /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D0F131A31CC0946100ABAD3C /* 011.png */,
 				D0F05C9B1CBF339800005DDC /* 010.png */,
 			);
 			name = res;
@@ -291,6 +294,7 @@
 			files = (
 				D09164A41CBB7DF1004B7C0B /* LaunchScreen.storyboard in Resources */,
 				D0F05C9C1CBF339800005DDC /* 010.png in Resources */,
+				D0F131A41CC0946100ABAD3C /* 011.png in Resources */,
 				D09164A11CBB7DF1004B7C0B /* Assets.xcassets in Resources */,
 				D091649F1CBB7DF1004B7C0B /* Main.storyboard in Resources */,
 			);

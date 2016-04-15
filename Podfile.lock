@@ -1,10 +1,10 @@
 PODS:
-  - YYText (1.0.4)
+  - HPTextViewTapGestureRecognizer (0.1)
 
 DEPENDENCIES:
-  - YYText
+  - HPTextViewTapGestureRecognizer (~> 0.1)
 
 SPEC CHECKSUMS:
-  YYText: 41761822986179828a27ccf82aa97c7b5483c2e2
+  HPTextViewTapGestureRecognizer: 6a73fd09f858e49a2743c3a338dc5c0791b0fae0
 
 COCOAPODS: 0.39.0

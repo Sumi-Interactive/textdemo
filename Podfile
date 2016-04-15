@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'textdemo' do
-  pod 'YYText'
+  pod 'HPTextViewTapGestureRecognizer', '~> 0.1'
 end
 
 target 'textdemoTests' do

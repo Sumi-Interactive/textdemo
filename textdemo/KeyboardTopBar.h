@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
+#import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 
-
-@interface KeyBoardTopBar : NSObject {
+@interface KeyBoardTopBar : NSObject<HPTextViewTapGestureRecognizerDelegate> {
     
     UIToolbar       *view;
     
