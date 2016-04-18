@@ -104,7 +104,24 @@
 }
 
 -(void)addOrderList {
-    NSLog(@"memeda1");
+    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+    
+    int row = [self getWhichParaCursonIn:result];
+    
+    int i = 1 ;
+    
+    if (row!=0) {
+        int number = [result[row-1] componentsSeparatedByString:@"."][0].intValue;
+        if (number==0) {
+            i = 1;
+        } else {
+            i = number+1;
+        }
+    }
+    
+    result[row]= [NSString stringWithFormat:@"%d. %@",i,result[row]];
+    
+    currentTextView.text = [result componentsJoinedByString:@"\n"];
 }
 
 -(void)addUnorderList {
