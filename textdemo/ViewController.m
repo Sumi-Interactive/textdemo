@@ -22,6 +22,7 @@
     
     self.textView.layer.borderWidth = 1;
     self.textView.allowsEditingTextAttributes = TRUE;
+    self.textView.editable = TRUE;
     self.textView.delegate=self;
     keyboardbar = [[KeyBoardTopBar alloc]init:self.textView];
     self.tapTextView.delegate = self;
@@ -85,10 +86,26 @@
     
     if ([text isEqualToString:@"\n"]) {
         [self.textView insertText:@"\n"];
-        [keyboardbar addOrderList];
+        switch([keyboardbar getTypingMode]) {
+            case ORDERLIST:
+                [keyboardbar addOrderList];
+                break;
+            case UNORDERLIST:
+                [keyboardbar addUnorderList];
+                break;
+            case CHECKLIST:
+                [keyboardbar addCheckButton];
+                break;
+        }
+        return NO;
+    } else if ([text length] == 0) {
+        if([keyboardbar dealWithDelete:range])
+            return YES;
+        else
+            return NO;
     }
     
-    return NO;
+    return YES;
 }
 
 @end

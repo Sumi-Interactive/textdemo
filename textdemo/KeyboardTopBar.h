@@ -1,6 +1,12 @@
 #import <UIKit/UIKit.h>
 #import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 
+const int NONESTYLE = 0;
+const int CHECKLIST = 1;
+const int ORDERLIST = 2;
+const int UNORDERLIST = 3;
+
+
 @interface KeyBoardTopBar : UIViewController<HPTextViewTapGestureRecognizerDelegate> {
     
     UIToolbar       *view;
@@ -23,6 +29,7 @@
     
     NSMutableDictionary *style;
     
+    int typingMode;
 }
 
 @property(nonatomic,retain) UIToolbar *view;
@@ -46,10 +53,12 @@
 
 -(void) dealWithTitle:(int)font;
 
--(CGRect)frameOfTextRange:(NSRange)range inTextView:(UITextView *)textView;
-
 -(int) getWhichParaCursonIn:(NSMutableArray *)result;
 
 -(int) getParaLocCursonIn:(NSMutableArray *)result;
+
+-(int)getTypingMode;
+
+-(BOOL)dealWithDelete:(NSRange)range;
 
 @end

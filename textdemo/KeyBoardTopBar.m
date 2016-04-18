@@ -51,6 +51,8 @@
         
         currentTextView.inputAccessoryView = view;
         
+        typingMode = NONESTYLE;
+        
     }
     
     return self;
@@ -71,7 +73,8 @@
     
     [mutStr insertAttributedString:attachStr atIndex:loc];
     currentTextView.attributedText = [mutStr copy];
-
+    
+    typingMode = CHECKLIST;
 }
 
 -(void)changeTextToBigTitle {
@@ -122,6 +125,8 @@
     result[row]= [NSString stringWithFormat:@"%d. %@",i,result[row]];
     
     currentTextView.text = [result componentsJoinedByString:@"\n"];
+    
+    typingMode = ORDERLIST;
 }
 
 -(void)addUnorderList {
@@ -132,6 +137,8 @@
     result[row]= [NSString stringWithFormat:@"- %@",result[row]];
     
     currentTextView.text = [result componentsJoinedByString:@"\n"];
+    
+    typingMode = UNORDERLIST;
 
 }
 
@@ -150,15 +157,6 @@
     view.barStyle = UIBarStyleDefault;
     [UIView commitAnimations];
     
-}
-
-- (CGRect)frameOfTextRange:(NSRange)range inTextView:(UITextView *)textView {
-    UITextPosition *beginning = textView.beginningOfDocument;
-    UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
-    UITextPosition *end = [textView positionFromPosition:start offset:range.length];
-    UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
-    CGRect rect = [textView firstRectForRange:textRange];
-    return [textView convertRect:rect fromView:textView.textInputView];
 }
 
 -(int) getWhichParaCursonIn:(NSMutableArray *)result {
@@ -204,4 +202,40 @@
     }
     return row;
 }
+
+-(int)getTypingMode {
+    return typingMode;
+}
+
+-(BOOL)dealWithDelete:(NSRange)range {
+    if (range.location!=0){
+        {
+            NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-1,2)];
+            if ([firstCharOfPara.string isEqualToString:@"- "]) {
+                NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+                [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,2)];
+                currentTextView.attributedText = [mutStr copy];
+            
+                return FALSE;
+            }
+        }
+        {
+            NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+            
+            int row = [self getWhichParaCursonIn:result];
+            int locOfPara = [self getParaLocCursonIn:result];
+            int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
+            if (locOfPara+locOfIndex==range.location) {
+                NSLog(@"inter");
+                NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+                [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
+                currentTextView.attributedText = [mutStr copy];
+                return FALSE;
+            }
+        }
+
+    }
+    return TRUE;
+}
+
 @end
