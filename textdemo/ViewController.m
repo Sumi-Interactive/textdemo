@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     self.textView.layer.borderWidth = 1;
+    self.textView.allowsEditingTextAttributes = TRUE;
     self.textView.delegate=self;
     keyboardbar = [[KeyBoardTopBar alloc]init:self.textView];
     self.tapTextView.delegate = self;
