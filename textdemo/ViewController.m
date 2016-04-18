@@ -80,4 +80,14 @@
     }
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if ([text isEqualToString:@"\n"]) {
+        [self.textView insertText:@"\n"];
+        [keyboardbar addOrderList];
+    }
+    
+    return NO;
+}
+
 @end
