@@ -208,7 +208,7 @@
 }
 
 -(BOOL)dealWithDelete:(NSRange)range {
-    if (range.location!=0){
+    if (range.location!=0) {
         {
             NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-1,2)];
             if ([firstCharOfPara.string isEqualToString:@"- "]) {
@@ -226,14 +226,18 @@
             int locOfPara = [self getParaLocCursonIn:result];
             int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
             if (locOfPara+locOfIndex==range.location) {
-                NSLog(@"inter");
                 NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
                 [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
                 currentTextView.attributedText = [mutStr copy];
                 return FALSE;
             }
         }
-
+        {
+            NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
+            NSLog(@"%d",[mutStr containsAttachmentsInRange:NSMakeRange(range.location,1)]);
+        }
+    } else {
+        return TRUE;
     }
     return TRUE;
 }
