@@ -85,19 +85,25 @@
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     if ([text isEqualToString:@"\n"]) {
-        [self.textView insertText:@"\n"];
-        switch([keyboardbar getTypingMode]) {
-            case ORDERLIST:
-                [keyboardbar addOrderList];
-                break;
-            case UNORDERLIST:
-                [keyboardbar addUnorderList];
-                break;
-            case CHECKLIST:
-                [keyboardbar addCheckButton];
-                break;
+        if ([keyboardbar isThisLineEmpty:range]) {
+            [keyboardbar dealWithDelete:NSMakeRange(range.location-1, range.length)];
+            [keyboardbar setTypingMode:NONESTYLE];
+            return YES;
+        } else {
+            [self.textView insertText:@"\n"];
+            switch([keyboardbar getTypingMode]) {
+                case ORDERLIST:
+                    [keyboardbar addOrderList];
+                    break;
+                case UNORDERLIST:
+                    [keyboardbar addUnorderList];
+                    break;
+                case CHECKLIST:
+                    [keyboardbar addCheckButton];
+                    break;
+            }
+            return NO;
         }
-        return NO;
     } else if ([text length] == 0) {
         if([keyboardbar dealWithDelete:range])
             return YES;

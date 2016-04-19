@@ -59,6 +59,10 @@ const int UNORDERLIST = 3;
 
 -(int)getTypingMode;
 
+-(void)setTypingMode:(int)mode;
+
 -(BOOL)dealWithDelete:(NSRange)range;
+
+-(BOOL)isThisLineEmpty:(NSRange)range;
 
 @end

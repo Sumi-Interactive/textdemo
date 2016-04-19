@@ -207,6 +207,10 @@
     return typingMode;
 }
 
+-(void)setTypingMode:(int)mode {
+    typingMode = mode;
+}
+
 -(BOOL)dealWithDelete:(NSRange)range {
     if (range.location!=0) {
         {
@@ -234,12 +238,62 @@
         }
         {
             NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
-            NSLog(@"%d",[mutStr containsAttachmentsInRange:NSMakeRange(range.location,1)]);
+            if([mutStr containsAttachmentsInRange:NSMakeRange(range.location,1)]==TRUE) {
+                NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+                [mutStr deleteCharactersInRange:NSMakeRange(range.location,1)];
+                currentTextView.attributedText = [mutStr copy];
+                return FALSE;
+            }
         }
-    } else {
-        return TRUE;
     }
     return TRUE;
+}
+
+-(BOOL)isThisLineEmpty:(NSRange)range {
+    
+    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+   
+    int row = [self getWhichParaCursonIn:[result mutableCopy]];
+    if ([result[row] length]==0)
+        return FALSE;
+    
+    int loc = [self getParaLocCursonIn:[result mutableCopy]];
+    
+    {
+        NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+        
+        int row = [self getWhichParaCursonIn:result];
+        int number = (int)[result[row] componentsSeparatedByString:@"."][0].intValue;
+        int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
+        if (number!=0) {
+            if (loc+locOfIndex+1==range.location) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+    }
+    {
+        NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
+        if([mutStr containsAttachmentsInRange:NSMakeRange(loc,1)]==TRUE) {
+            if (range.location==loc+1) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+    }
+    {
+        NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(loc,2)];
+        if ([firstCharOfPara.string isEqualToString:@"- "]) {
+            if (loc+2==range.location) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+    }
+    return FALSE;
 }
 
 @end
