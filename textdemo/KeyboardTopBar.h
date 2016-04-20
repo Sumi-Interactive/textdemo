@@ -65,4 +65,6 @@ const int UNORDERLIST = 3;
 
 -(BOOL)isThisLineEmpty:(NSRange)range;
 
+-(void)editAttributeString:(NSString*)text;
+
 @end

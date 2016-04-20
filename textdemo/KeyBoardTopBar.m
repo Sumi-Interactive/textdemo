@@ -124,20 +124,19 @@
     
     result[row]= [NSString stringWithFormat:@"%d. %@",i,result[row]];
     
-    currentTextView.text = [result componentsJoinedByString:@"\n"];
+    [self editAttributeString:result[row]];
     
     typingMode = ORDERLIST;
 }
 
 -(void)addUnorderList {
     NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-   
+    
     int row = [self getWhichParaCursonIn:result];
    
     result[row]= [NSString stringWithFormat:@"- %@",result[row]];
     
-    currentTextView.text = [result componentsJoinedByString:@"\n"];
-    
+    [self editAttributeString:result[row]];
     typingMode = UNORDERLIST;
 
 }
@@ -294,6 +293,16 @@
         }
     }
     return FALSE;
+}
+
+-(void)editAttributeString:(NSString*)text {
+    NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
+    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+    
+    int row = [self getWhichParaCursonIn:result];
+    int loc = [self getParaLocCursonIn:result];
+    [replace.mutableString replaceCharactersInRange:NSMakeRange(loc, [result[row] length]) withString:text];
+    currentTextView.attributedText  = [replace copy];
 }
 
 @end
