@@ -246,8 +246,29 @@
             int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
             if (locOfPara+locOfIndex==range.location) {
                 NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
+                if (locOfPara!=0)
+                    [mutStr deleteCharactersInRange:NSMakeRange(locOfPara-1,locOfIndex+1)];
+                else
+                    [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
                 currentTextView.attributedText = [mutStr copy];
+                
+                for(int j=row+1;j<result.count;j++) {
+                    int tmp = [result[j] componentsSeparatedByString:@"."][0].intValue;
+                    if (tmp!=0){
+                        NSRange range = [currentTextView.attributedText.string rangeOfString:result[j]];
+                        NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
+                        NSMutableString *text = [NSMutableString stringWithString:result[j]];
+                        NSString *newIndexLength = [NSString stringWithFormat:@"%d .",tmp];
+                        NSString *newIndex = [NSString stringWithFormat:@"%d. ",tmp-1];
+                        [text replaceCharactersInRange:NSMakeRange(0, newIndexLength.length) withString:newIndex];
+                        
+                        [replace.mutableString replaceCharactersInRange:range withString:text];
+                        currentTextView.attributedText  = [replace copy];
+                    } else {
+                        break;
+                    }
+                }
+                
                 return FALSE;
             }
         }
