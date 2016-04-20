@@ -7,7 +7,6 @@
 //
 
 #import "KeyBoardTopBar.h"
-#import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 
 @implementation KeyBoardTopBar
 
@@ -126,6 +125,16 @@
     
     [self editAttributeString:result[row]];
     
+//    for (int i=row+1;i<result.count;i++) {
+//        int tmp = [result[i] componentsSeparatedByString:@"."][0].intValue;
+//        if (tmp!=0) {
+//            NSString *newIndexLength = [NSString stringWithFormat:@"%d .",tmp];
+//            NSString *newIndex = [NSString stringWithFormat:@"%d .",tmp+1];
+//            [result[i] replaceCharactersInRange:NSMakeRange(0, newIndexLength.length) withString:newIndex];
+//            [self editAttributeString:result[i]];
+//        }
+//    }
+    
     typingMode = ORDERLIST;
 }
 
@@ -218,7 +227,6 @@
                 NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
                 [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,2)];
                 currentTextView.attributedText = [mutStr copy];
-            
                 return FALSE;
             }
         }

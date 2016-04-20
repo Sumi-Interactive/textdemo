@@ -1,10 +1,13 @@
 #import <UIKit/UIKit.h>
 #import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 
-const int NONESTYLE = 0;
-const int CHECKLIST = 1;
-const int ORDERLIST = 2;
-const int UNORDERLIST = 3;
+typedef NS_ENUM(NSInteger,typingType){
+    NONESTYLE = 0,
+    CHECKLIST = 1,
+    ORDERLIST = 2,
+    UNORDERLIST = 3
+};
+
 
 
 @interface KeyBoardTopBar : UIViewController<HPTextViewTapGestureRecognizerDelegate> {
