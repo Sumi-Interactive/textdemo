@@ -68,6 +68,6 @@ typedef NS_ENUM(NSInteger,typingType){
 
 -(BOOL)isThisLineEmpty:(NSRange)range;
 
--(void)editAttributeString:(NSString*)text;
+-(void)editAttributeString:(NSString*)text :(NSRange)range; 
 
 @end

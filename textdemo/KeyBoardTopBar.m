@@ -109,6 +109,7 @@
     NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
     
     int row = [self getWhichParaCursonIn:result];
+    int loc = [self getParaLocCursonIn:result];
     
     int i = 1 ;
     
@@ -121,19 +122,25 @@
         }
     }
     
-    result[row]= [NSString stringWithFormat:@"%d. %@",i,result[row]];
+    NSString *replace = [NSString stringWithFormat:@"%d. %@",i,result[row]];
+    [self editAttributeString:replace :NSMakeRange(loc, [result[row] length])];
     
-    [self editAttributeString:result[row]];
-    
-//    for (int i=row+1;i<result.count;i++) {
-//        int tmp = [result[i] componentsSeparatedByString:@"."][0].intValue;
-//        if (tmp!=0) {
-//            NSString *newIndexLength = [NSString stringWithFormat:@"%d .",tmp];
-//            NSString *newIndex = [NSString stringWithFormat:@"%d .",tmp+1];
-//            [result[i] replaceCharactersInRange:NSMakeRange(0, newIndexLength.length) withString:newIndex];
-//            [self editAttributeString:result[i]];
-//        }
-//    }
+    for(int j=row+1;j<result.count;j++) {
+        int tmp = [result[j] componentsSeparatedByString:@"."][0].intValue;
+        if (tmp!=0){
+            NSRange range = [currentTextView.attributedText.string rangeOfString:result[j]];
+            NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
+            NSMutableString *text = [NSMutableString stringWithString:result[j]];
+            NSString *newIndexLength = [NSString stringWithFormat:@"%d .",tmp];
+            NSString *newIndex = [NSString stringWithFormat:@"%d. ",tmp+1];
+            [text replaceCharactersInRange:NSMakeRange(0, newIndexLength.length) withString:newIndex];
+
+            [replace.mutableString replaceCharactersInRange:range withString:text];
+            currentTextView.attributedText  = [replace copy];
+        } else {
+            break;
+        }
+    }
     
     typingMode = ORDERLIST;
 }
@@ -142,10 +149,11 @@
     NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
     
     int row = [self getWhichParaCursonIn:result];
-   
-    result[row]= [NSString stringWithFormat:@"- %@",result[row]];
+    int loc = [self getParaLocCursonIn:result];
     
-    [self editAttributeString:result[row]];
+    NSString *replace = [NSString stringWithFormat:@"- %@",result[row]];
+    
+    [self editAttributeString:replace :NSMakeRange(loc, [result[row] length]) ];
     typingMode = UNORDERLIST;
 
 }
@@ -303,13 +311,9 @@
     return FALSE;
 }
 
--(void)editAttributeString:(NSString*)text {
+-(void)editAttributeString:(NSString*)text :(NSRange)range{
     NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
-    NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-    
-    int row = [self getWhichParaCursonIn:result];
-    int loc = [self getParaLocCursonIn:result];
-    [replace.mutableString replaceCharactersInRange:NSMakeRange(loc, [result[row] length]) withString:text];
+    [replace.mutableString replaceCharactersInRange:range withString:text];
     currentTextView.attributedText  = [replace copy];
 }
 
