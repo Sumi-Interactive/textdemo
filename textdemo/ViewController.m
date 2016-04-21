@@ -90,9 +90,9 @@
             [keyboardbar setTypingMode:NONESTYLE];
             return YES;
         } else {
-            int a = [keyboardbar getTypingMode];
+            int result = [keyboardbar getTypingMode];
             [self.textView insertText:@"\n"];
-            switch(a) {
+            switch(result) {
                 case ORDERLIST:
                     [keyboardbar addOrderList];
                     break;

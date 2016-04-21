@@ -60,7 +60,7 @@
 
 
 -(void)addCheckButton {
-   [self getParaTypingMode:currentTextView.selectedRange];
+    [self deleteParaIndex];
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
     NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
     attachment.bounds = CGRectMake(0, 0, 30, 30);
@@ -106,6 +106,7 @@
 }
 
 -(void)addOrderList {
+    [self deleteParaIndex];
     NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
     
     int row = [self getWhichParaCursonIn:result];
@@ -146,6 +147,7 @@
 }
 
 -(void)addUnorderList {
+    [self deleteParaIndex];
     NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
     
     int row = [self getWhichParaCursonIn:result];
@@ -307,6 +309,7 @@
             }
             case CHECKLIST:
             {
+                //TODO:edit
                 NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
                 if([mutStr containsAttachmentsInRange:NSMakeRange(range.location,1)]==TRUE) {
                     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
@@ -375,6 +378,62 @@
     NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
     [replace.mutableString replaceCharactersInRange:range withString:text];
     currentTextView.attributedText  = [replace copy];
+}
+
+-(void)deleteParaIndex {
+    if([self isParaContainIndex:currentTextView.selectedRange]==FALSE) return;
+    switch([self getParaTypingMode:currentTextView.selectedRange]){
+        case UNORDERLIST:
+        {
+            NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+            int loc = [self getParaLocCursonIn:result];
+            NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+            [mutStr deleteCharactersInRange:NSMakeRange(loc,2)];
+            currentTextView.attributedText = [mutStr copy];
+            break;
+        }
+        case ORDERLIST:
+        {
+             NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+            int row = [self getWhichParaCursonIn:result];
+            int locOfPara = [self getParaLocCursonIn:result];
+            int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
+            
+            NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+            if (locOfPara!=0)
+                [mutStr deleteCharactersInRange:NSMakeRange(locOfPara-1,locOfIndex+1)];
+            else
+                [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
+            currentTextView.attributedText = [mutStr copy];
+            break;
+        }
+        case CHECKLIST:
+        {
+            NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+            int loc = [self getParaLocCursonIn:result];
+            NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+            [mutStr deleteCharactersInRange:NSMakeRange(loc,1)];
+            currentTextView.attributedText = [mutStr copy];
+            
+            break;
+        }
+    }
+}
+
+-(BOOL)isParaContainIndex:(NSRange)range {
+    NSMutableArray *result = [[currentTextView.text componentsSeparatedByString:@"\n"] mutableCopy];
+    int row = [self getWhichParaCursonIn:result];
+    int loc = [self getParaLocCursonIn:result];
+    NSMutableAttributedString *str = [currentTextView.attributedText mutableCopy];
+    if ([result[row] componentsSeparatedByString:@"."][0].intValue!=0) {
+        return TRUE;
+    } else if([result[row] length]>=2 && [[result[row] substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"- "]) {
+        return TRUE;
+    } else if(loc+1<str.length &&[str containsAttachmentsInRange:NSMakeRange(loc, 1)]==TRUE) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
 }
 
 @end
