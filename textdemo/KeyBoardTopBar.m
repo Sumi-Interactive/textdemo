@@ -60,7 +60,7 @@
 
 
 -(void)addCheckButton {
-    
+   [self getParaTypingMode:currentTextView.selectedRange];
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
     NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
     attachment.bounds = CGRectMake(0, 0, 30, 30);
@@ -223,18 +223,18 @@
     NSMutableArray *result = [[currentTextView.text componentsSeparatedByString:@"\n"] mutableCopy];
     int loc = [self getParaLocCursonIn:result];
     int row = [self getWhichParaCursonIn:result];
-//    if (range.location==currentTextView.attributedText.string.length) {
-//        return typingMode;
-//      }
-    NSAttributedString *isUnorderList;
+    if (range.location==currentTextView.attributedText.string.length) {
+        return typingMode;
+      }
+    NSString *isUnorderList;
     if ([result[row] length]>=2) {
-        isUnorderList = [result[row] attributedSubstringFromRange:NSMakeRange(0,2)];
+        isUnorderList = [result[row] substringWithRange:NSMakeRange(0,2)];
     } else {
-        isUnorderList = [NSString init];
+        isUnorderList = [[NSString alloc ]init];
     }
     NSString *isOrderList = [result[row] componentsSeparatedByString:@"."][0];
     NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
-    if ([isUnorderList.string isEqualToString:@"- "]) {
+    if ([isUnorderList isEqualToString:@"- "]) {
         typingMode = UNORDERLIST;
         return UNORDERLIST;
     } else if([isOrderList intValue]!=0) {
