@@ -56,9 +56,9 @@ typedef NS_ENUM(NSInteger,typingType){
 
 -(void) dealWithTitle:(int)font;
 
--(int) getWhichParaCursonIn:(NSMutableArray *)result;
+-(int) getWhichParaCursonIn;
 
--(int) getParaLocCursonIn:(NSMutableArray *)result;
+-(int) getParaLocCursonIn;
 
 -(int)getParaTypingMode:(NSRange)range;
 

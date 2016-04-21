@@ -68,7 +68,7 @@
     [attachment.image setAccessibilityIdentifier:@"unchecked"];
     NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
     
-    int loc = [self getParaLocCursonIn:[[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy] ];
+    int loc = [self getParaLocCursonIn];
     [mutStr insertAttributedString:attachStr atIndex:loc];
     currentTextView.attributedText = [mutStr copy];
     
@@ -108,8 +108,8 @@
     [self deleteParaIndex];
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     
-    int row = [self getWhichParaCursonIn:result];
-    int loc = [self getParaLocCursonIn:result];
+    int row = [self getWhichParaCursonIn];
+    int loc = [self getParaLocCursonIn];
     
     int i = 1 ;
     
@@ -149,8 +149,8 @@
     [self deleteParaIndex];
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     
-    int row = [self getWhichParaCursonIn:result];
-    int loc = [self getParaLocCursonIn:result];
+    int row = [self getWhichParaCursonIn];
+    int loc = [self getParaLocCursonIn];
     
     NSString *replace = [NSString stringWithFormat:@"- %@",result[row]];
     
@@ -176,7 +176,8 @@
     
 }
 
--(int) getWhichParaCursonIn:(NSMutableArray *)result {
+-(int) getWhichParaCursonIn {
+    NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     int count = (int)result.count;
     int loc = (int)currentTextView.selectedRange.location;
     int row = 0;
@@ -198,7 +199,8 @@
     return row;
 }
 
--(int) getParaLocCursonIn:(NSMutableArray *)result {
+-(int) getParaLocCursonIn {
+     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     int count = (int)result.count;
     int loc = (int)currentTextView.selectedRange.location;
     int row = 0;
@@ -222,8 +224,8 @@
 
 -(int)getParaTypingMode:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
-    int loc = [self getParaLocCursonIn:result];
-    int row = [self getWhichParaCursonIn:result];
+    int loc = [self getParaLocCursonIn];
+    int row = [self getWhichParaCursonIn];
     if (range.location==currentTextView.attributedText.string.length) {
         return typingMode;
       }
@@ -275,8 +277,8 @@
             {
                 NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
             
-                int row = [self getWhichParaCursonIn:result];
-                int locOfPara = [self getParaLocCursonIn:result];
+                int row = [self getWhichParaCursonIn];
+                int locOfPara = [self getParaLocCursonIn];
                 int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
                 if (locOfPara+locOfIndex==range.location) {
                     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
@@ -326,17 +328,17 @@
     
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
    
-    int row = [self getWhichParaCursonIn:[result mutableCopy]];
+    int row = [self getWhichParaCursonIn];
     if ([result[row] length]==0)
         return FALSE;
     
-    int loc = [self getParaLocCursonIn:[result mutableCopy]];
+    int loc = [self getParaLocCursonIn];
     switch([self getTypingMode]) {
         case ORDERLIST:
         {
             NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
             
-            int row = [self getWhichParaCursonIn:result];
+            int row = [self getWhichParaCursonIn];
             int number = (int)[result[row] componentsSeparatedByString:@"."][0].intValue;
             int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
             if (number!=0) {
@@ -385,8 +387,7 @@
     switch([self getParaTypingMode:currentTextView.selectedRange]){
         case UNORDERLIST:
         {
-            NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-            int loc = [self getParaLocCursonIn:result];
+            int loc = [self getParaLocCursonIn];
             NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
             [mutStr deleteCharactersInRange:NSMakeRange(loc,2)];
             currentTextView.attributedText = [mutStr copy];
@@ -397,8 +398,8 @@
         case ORDERLIST:
         {
             NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-            int row = [self getWhichParaCursonIn:result];
-            int loc = [self getParaLocCursonIn:result];
+            int row = [self getWhichParaCursonIn];
+            int loc = [self getParaLocCursonIn];
             int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
             
             NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
@@ -410,8 +411,7 @@
         }
         case CHECKLIST:
         {
-            NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-            int loc = [self getParaLocCursonIn:result];
+            int loc = [self getParaLocCursonIn];
             NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
             [mutStr deleteCharactersInRange:NSMakeRange(loc,1)];
             currentTextView.attributedText = [mutStr copy];
@@ -423,8 +423,8 @@
 
 -(BOOL)isParaContainIndex:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
-    int row = [self getWhichParaCursonIn:result];
-    int loc = [self getParaLocCursonIn:result];
+    int row = [self getWhichParaCursonIn];
+    int loc = [self getParaLocCursonIn];
     NSMutableAttributedString *str = [currentTextView.attributedText mutableCopy];
     if ([result[row] componentsSeparatedByString:@"."][0].intValue!=0) {
         return TRUE;
