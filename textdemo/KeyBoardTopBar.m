@@ -219,6 +219,36 @@
     return row;
 }
 
+-(int)getParaTypingMode:(NSRange)range {
+    NSMutableArray *result = [[currentTextView.text componentsSeparatedByString:@"\n"] mutableCopy];
+    int loc = [self getParaLocCursonIn:result];
+    int row = [self getWhichParaCursonIn:result];
+//    if (range.location==currentTextView.attributedText.string.length) {
+//        return typingMode;
+//      }
+    NSAttributedString *isUnorderList;
+    if ([result[row] length]>=2) {
+        isUnorderList = [result[row] attributedSubstringFromRange:NSMakeRange(0,2)];
+    } else {
+        isUnorderList = [NSString init];
+    }
+    NSString *isOrderList = [result[row] componentsSeparatedByString:@"."][0];
+    NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
+    if ([isUnorderList.string isEqualToString:@"- "]) {
+        typingMode = UNORDERLIST;
+        return UNORDERLIST;
+    } else if([isOrderList intValue]!=0) {
+        typingMode = ORDERLIST;
+        return ORDERLIST;
+    } else if([mutStr containsAttachmentsInRange:NSMakeRange(loc,1)]==TRUE) {
+        typingMode = CHECKLIST;
+        return CHECKLIST;
+    } else {
+        typingMode = NONESTYLE;
+        return NONESTYLE;
+    }
+}
+
 -(int)getTypingMode {
     return typingMode;
 }
@@ -229,56 +259,61 @@
 
 -(BOOL)dealWithDelete:(NSRange)range {
     if (range.location!=0) {
-        {
-            NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-1,2)];
-            if ([firstCharOfPara.string isEqualToString:@"- "]) {
-                NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,2)];
-                currentTextView.attributedText = [mutStr copy];
-                return FALSE;
-            }
-        }
-        {
-            NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-            
-            int row = [self getWhichParaCursonIn:result];
-            int locOfPara = [self getParaLocCursonIn:result];
-            int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
-            if (locOfPara+locOfIndex==range.location) {
-                NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                if (locOfPara!=0)
-                    [mutStr deleteCharactersInRange:NSMakeRange(locOfPara-1,locOfIndex+1)];
-                else
-                    [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
-                currentTextView.attributedText = [mutStr copy];
-                
-                for(int j=row+1;j<result.count;j++) {
-                    int tmp = [result[j] componentsSeparatedByString:@"."][0].intValue;
-                    if (tmp!=0){
-                        NSRange range = [currentTextView.attributedText.string rangeOfString:result[j]];
-                        NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
-                        NSMutableString *text = [NSMutableString stringWithString:result[j]];
-                        NSString *newIndexLength = [NSString stringWithFormat:@"%d .",tmp];
-                        NSString *newIndex = [NSString stringWithFormat:@"%d. ",tmp-1];
-                        [text replaceCharactersInRange:NSMakeRange(0, newIndexLength.length) withString:newIndex];
-                        
-                        [replace.mutableString replaceCharactersInRange:range withString:text];
-                        currentTextView.attributedText  = [replace copy];
-                    } else {
-                        break;
-                    }
+        switch([self getTypingMode]) {
+            case UNORDERLIST:
+            {
+                NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-1,2)];
+                if ([firstCharOfPara.string isEqualToString:@"- "]) {
+                    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+                    [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,2)];
+                    currentTextView.attributedText = [mutStr copy];
+                    return FALSE;
                 }
-                
-                return FALSE;
             }
-        }
-        {
-            NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
-            if([mutStr containsAttachmentsInRange:NSMakeRange(range.location,1)]==TRUE) {
-                NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                [mutStr deleteCharactersInRange:NSMakeRange(range.location,1)];
-                currentTextView.attributedText = [mutStr copy];
-                return FALSE;
+            case ORDERLIST:
+            {
+                NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+            
+                int row = [self getWhichParaCursonIn:result];
+                int locOfPara = [self getParaLocCursonIn:result];
+                int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
+                if (locOfPara+locOfIndex==range.location) {
+                    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+                    if (locOfPara!=0)
+                        [mutStr deleteCharactersInRange:NSMakeRange(locOfPara-1,locOfIndex+1)];
+                    else
+                        [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
+                    currentTextView.attributedText = [mutStr copy];
+                
+                    for(int j=row+1;j<result.count;j++) {
+                        int tmp = [result[j] componentsSeparatedByString:@"."][0].intValue;
+                        if (tmp!=0){
+                            NSRange range = [currentTextView.attributedText.string rangeOfString:result[j]];
+                            NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
+                            NSMutableString *text = [NSMutableString stringWithString:result[j]];
+                            NSString *newIndexLength = [NSString stringWithFormat:@"%d .",tmp];
+                            NSString *newIndex = [NSString stringWithFormat:@"%d. ",tmp-1];
+                            [text replaceCharactersInRange:NSMakeRange(0, newIndexLength.length) withString:newIndex];
+                        
+                            [replace.mutableString replaceCharactersInRange:range withString:text];
+                            currentTextView.attributedText  = [replace copy];
+                        } else {
+                            break;
+                        }
+                    }
+                
+                    return FALSE;
+                }
+            }
+            case CHECKLIST:
+            {
+                NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
+                if([mutStr containsAttachmentsInRange:NSMakeRange(range.location,1)]==TRUE) {
+                    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
+                    [mutStr deleteCharactersInRange:NSMakeRange(range.location,1)];
+                    currentTextView.attributedText = [mutStr copy];
+                    return FALSE;
+                }
             }
         }
     }
@@ -294,38 +329,42 @@
         return FALSE;
     
     int loc = [self getParaLocCursonIn:[result mutableCopy]];
-    
-    {
-        NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
-        
-        int row = [self getWhichParaCursonIn:result];
-        int number = (int)[result[row] componentsSeparatedByString:@"."][0].intValue;
-        int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
-        if (number!=0) {
-            if (loc+locOfIndex+1==range.location) {
-                return TRUE;
-            } else {
-                return FALSE;
+    switch([self getTypingMode]) {
+        case ORDERLIST:
+        {
+            NSMutableArray *result = [[currentTextView.text  componentsSeparatedByString:@"\n"] mutableCopy];
+            
+            int row = [self getWhichParaCursonIn:result];
+            int number = (int)[result[row] componentsSeparatedByString:@"."][0].intValue;
+            int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
+            if (number!=0) {
+                if (loc+locOfIndex+1==range.location) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
             }
         }
-    }
-    {
-        NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
-        if([mutStr containsAttachmentsInRange:NSMakeRange(loc,1)]==TRUE) {
-            if (range.location==loc+1) {
-                return TRUE;
-            } else {
-                return FALSE;
+        case CHECKLIST:
+        {
+            NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
+            if([mutStr containsAttachmentsInRange:NSMakeRange(loc,1)]==TRUE) {
+                if (range.location==loc+1) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
             }
         }
-    }
-    {
-        NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(loc,2)];
-        if ([firstCharOfPara.string isEqualToString:@"- "]) {
-            if (loc+2==range.location) {
-                return TRUE;
-            } else {
-                return FALSE;
+        case UNORDERLIST:
+        {
+            NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(loc,2)];
+            if ([firstCharOfPara.string isEqualToString:@"- "]) {
+                if (loc+2==range.location) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
             }
         }
     }

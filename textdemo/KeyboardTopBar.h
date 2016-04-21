@@ -60,6 +60,8 @@ typedef NS_ENUM(NSInteger,typingType){
 
 -(int) getParaLocCursonIn:(NSMutableArray *)result;
 
+-(int)getParaTypingMode:(NSRange)range;
+
 -(int)getTypingMode;
 
 -(void)setTypingMode:(int)mode;
