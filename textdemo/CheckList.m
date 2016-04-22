@@ -13,8 +13,8 @@
 -(BOOL)dealWithDelete:(NSRange)range {
     if (range.location==0) return TRUE;
     NSMutableAttributedString *mutStr = [currentTextView.attributedText mutableCopy];
-    if([mutStr containsAttachmentsInRange:NSMakeRange(range.location-1,1)]==TRUE) {
-        [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,1)];
+    if([mutStr containsAttachmentsInRange:NSMakeRange(range.location,1)]==TRUE) {
+        [mutStr deleteCharactersInRange:NSMakeRange(range.location,1)];
         currentTextView.attributedText = [mutStr copy];
         return FALSE;
     } else {

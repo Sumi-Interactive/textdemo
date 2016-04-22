@@ -16,7 +16,7 @@
     
     int row = [self getWhichParaCursonIn];
     int locOfPara = [self getParaLocCursonIn];
-    int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+2;
+    int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
     if (locOfPara+locOfIndex==range.location) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
         
@@ -25,7 +25,7 @@
         
         for(int j=row+1;j<result.count;j++) {
             int tmp = [result[j] componentsSeparatedByString:@"."][0].intValue;
-            if (tmp!=0){
+            if (tmp!=0) {
                 NSRange range = [currentTextView.attributedText.string rangeOfString:result[j]];
                 NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
                 NSMutableString *text = [NSMutableString stringWithString:result[j]];
@@ -35,12 +35,11 @@
                 
                 [replace.mutableString replaceCharactersInRange:range withString:text];
                 currentTextView.attributedText  = [replace copy];
+                return FALSE;
             }
         }
-        return TRUE;
-    } else {
-        return FALSE;
     }
+    return TRUE;
 }
 
 -(BOOL)isThisLineEmpty:(NSRange)range {
