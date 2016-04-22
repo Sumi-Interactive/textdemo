@@ -63,15 +63,18 @@
 }
 
 -(void)addOrderList {
+    [self deleteParaIndex];
     [orderList addOrderList];
     typingMode = ORDERLIST;
 }
 
 -(void)addUnorderList {
+    [self deleteParaIndex];
     [unorderList addUnorderList];
     typingMode = UNORDERLIST;
 }
 -(void)addCheckButton {
+    [self deleteParaIndex];
     [checkList addCheckList];
     typingMode = CHECKLIST;
 }
@@ -122,82 +125,6 @@
     
 }
 
--(int) getWhichParaCursonIn {
-    NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-    int count = (int)result.count;
-    int loc = (int)currentTextView.selectedRange.location;
-    int row = 0;
-    NSMutableArray *offset = [[NSMutableArray alloc] init];
-    for (int i=0,foo=0; i<count; i++) {
-        [offset addObject:[NSNumber numberWithInt:foo]];
-        foo = foo + (int)[result[i] length] + 1;
-        if (count-1==i)
-            [offset addObject:[NSNumber numberWithInt:foo]];
-    }
-    
-    for (int i=0; i<count; i++) {
-        
-        if ( loc>=[offset[i] intValue]&&loc<[offset[i+1] intValue]) {
-            row = i;
-            break;
-        }
-    }
-    return row;
-}
-
--(int) getParaLocCursonIn {
-     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-    int count = (int)result.count;
-    int loc = (int)currentTextView.selectedRange.location;
-    int row = 0;
-    NSMutableArray *offset = [[NSMutableArray alloc] init];
-    for (int i=0,foo=0; i<count; i++) {
-        [offset addObject:[NSNumber numberWithInt:foo]];
-        foo = foo + (int)[result[i] length] + 1;
-        if (count-1==i)
-            [offset addObject:[NSNumber numberWithInt:foo]];
-    }
-    
-    for (int i=0; i<count; i++) {
-        
-        if ( loc>=[offset[i] intValue]&&loc<[offset[i+1] intValue]) {
-            row = [offset[i] intValue];
-            break;
-        }
-    }
-    return row;
-}
-
--(int)getParaTypingMode:(NSRange)range {
-    NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
-    int loc = [self getParaLocCursonIn];
-    int row = [self getWhichParaCursonIn];
-    if (range.location==currentTextView.attributedText.string.length) {
-        return typingMode;
-      }
-    NSString *isUnorderList;
-    if ([result[row] length]>=2) {
-        isUnorderList = [result[row] substringWithRange:NSMakeRange(0,2)];
-    } else {
-        isUnorderList = [[NSString alloc ]init];
-    }
-    NSString *isOrderList = [result[row] componentsSeparatedByString:@"."][0];
-    NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
-    if ([isUnorderList isEqualToString:@"- "]) {
-        typingMode = UNORDERLIST;
-        return UNORDERLIST;
-    } else if([isOrderList intValue]!=0) {
-        typingMode = ORDERLIST;
-        return ORDERLIST;
-    } else if([mutStr containsAttachmentsInRange:NSMakeRange(loc,1)]==TRUE) {
-        typingMode = CHECKLIST;
-        return CHECKLIST;
-    } else {
-        typingMode = NONESTYLE;
-        return NONESTYLE;
-    }
-}
-
 -(int)getTypingMode {
     return typingMode;
 }
@@ -230,6 +157,12 @@
         default:
             return FALSE;
     }
+}
+
+-(void)deleteParaIndex {
+    [orderList deleteParaIndex];
+    [unorderList deleteParaIndex];
+    [checkList deleteParaIndex];
 }
 
 @end

@@ -62,12 +62,6 @@ typedef NS_ENUM(NSInteger,typingType){
 
 -(void)dealWithTitle:(int)font;
 
--(int) getWhichParaCursonIn;
-
--(int) getParaLocCursonIn;
-
--(int)getParaTypingMode:(NSRange)range;
-
 -(int)getTypingMode;
 
 -(void)setTypingMode:(int)mode;
@@ -75,5 +69,7 @@ typedef NS_ENUM(NSInteger,typingType){
 -(BOOL)dealWithDelete:(NSRange)range;
 
 -(BOOL)isThisLineEmpty:(NSRange)range;
+
+-(void)deleteParaIndex;
 
 @end
