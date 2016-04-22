@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 #import "OrderList.h"
-
+#import "UnorderList.h"
 typedef NS_ENUM(NSInteger,typingType){
     NONESTYLE = 0,
     CHECKLIST = 1,
@@ -36,6 +36,7 @@ typedef NS_ENUM(NSInteger,typingType){
     int typingMode;
     
     OrderList *orderList;
+    UnorderList *unorderList;
 }
 
 @property(nonatomic,retain) UIToolbar *view;

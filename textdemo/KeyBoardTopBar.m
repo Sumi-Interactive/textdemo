@@ -51,7 +51,7 @@
         currentTextView.inputAccessoryView = view;
         
         orderList = [[OrderList alloc] init:currentTextView];
-        
+        unorderList = [[UnorderList alloc] init:currentTextView];
         typingMode = NONESTYLE;
         
     }
@@ -65,6 +65,10 @@
     typingMode = ORDERLIST;
 }
 
+-(void)addUnorderList {
+    [unorderList addUnorderList];
+    typingMode = UNORDERLIST;
+}
 -(void)addCheckButton {
     [self deleteParaIndex];
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
@@ -108,20 +112,6 @@
 }
 -(void)changeTextFontStyle {
     currentTextView.typingAttributes = style;
-}
-
--(void)addUnorderList {
-    [self deleteParaIndex];
-    NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-    
-    int row = [self getWhichParaCursonIn];
-    int loc = [self getParaLocCursonIn];
-    
-    NSString *replace = [NSString stringWithFormat:@"- %@",result[row]];
-    
-    [self editAttributeString:replace :NSMakeRange(loc, [result[row] length]) ];
-    typingMode = UNORDERLIST;
-
 }
 
 -(void)hideKeyBoard {
