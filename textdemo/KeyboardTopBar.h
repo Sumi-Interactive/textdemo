@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
+#import "OrderList.h"
 
 typedef NS_ENUM(NSInteger,typingType){
     NONESTYLE = 0,
@@ -33,6 +34,8 @@ typedef NS_ENUM(NSInteger,typingType){
     NSMutableDictionary *style;
     
     int typingMode;
+    
+    OrderList *orderList;
 }
 
 @property(nonatomic,retain) UIToolbar *view;
@@ -54,7 +57,7 @@ typedef NS_ENUM(NSInteger,typingType){
 
 -(void)changeTextFontStyle;
 
--(void) dealWithTitle:(int)font;
+-(void)dealWithTitle:(int)font;
 
 -(int) getWhichParaCursonIn;
 
