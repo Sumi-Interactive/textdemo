@@ -125,18 +125,21 @@
     NSString *replace = [NSString stringWithFormat:@"%d. %@",i,result[row]];
     [self editAttributeString:replace :NSMakeRange(loc, [result[row] length])];
     
+    int offset = loc + (int)replace.length+1;
     for(int j=row+1;j<result.count;j++) {
         int tmp = [result[j] componentsSeparatedByString:@"."][0].intValue;
         if (tmp!=0){
-            NSRange range = [currentTextView.attributedText.string rangeOfString:result[j]];
+            
             NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
             NSMutableString *text = [NSMutableString stringWithString:result[j]];
             NSString *newIndexLength = [NSString stringWithFormat:@"%d .",tmp];
             NSString *newIndex = [NSString stringWithFormat:@"%d. ",tmp+1];
             [text replaceCharactersInRange:NSMakeRange(0, newIndexLength.length) withString:newIndex];
-
+            
+            NSRange range = NSMakeRange(offset,[text length]);
             [replace.mutableString replaceCharactersInRange:range withString:text];
             currentTextView.attributedText  = [replace copy];
+            offset = offset + (int)[text length]+1;
         } else {
             break;
         }
