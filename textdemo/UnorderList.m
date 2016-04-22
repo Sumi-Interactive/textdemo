@@ -11,11 +11,11 @@
 @implementation UnorderList : List
 
 -(BOOL)dealWithDelete:(NSRange)range {
-    if (range.location==0) return TRUE;
-    NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-1,2)];
+    if (range.location<2) return TRUE;
+    NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-2,2)];
     if ([firstCharOfPara.string isEqualToString:@"- "]) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-        [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,2)];
+        [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
         currentTextView.attributedText = [mutStr copy];
         return FALSE;
     } else {

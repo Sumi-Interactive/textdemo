@@ -16,7 +16,7 @@
     
     int row = [self getWhichParaCursonIn];
     int locOfPara = [self getParaLocCursonIn];
-    int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
+    int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+2;
     if (locOfPara+locOfIndex==range.location) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
         
