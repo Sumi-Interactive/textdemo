@@ -268,10 +268,10 @@
         switch([self getTypingMode]) {
             case UNORDERLIST:
             {
-                NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-1,2)];
+                NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-2,2)];
                 if ([firstCharOfPara.string isEqualToString:@"- "]) {
                     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                    [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,2)];
+                    [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
                     currentTextView.attributedText = [mutStr copy];
                     return FALSE;
                 }
@@ -282,13 +282,11 @@
             
                 int row = [self getWhichParaCursonIn];
                 int locOfPara = [self getParaLocCursonIn];
-                int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
+                int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+2;
                 if (locOfPara+locOfIndex==range.location) {
                     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                    if (locOfPara!=0)
-                        [mutStr deleteCharactersInRange:NSMakeRange(locOfPara-1,locOfIndex+1)];
-                    else
-                        [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
+                    
+                    [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex)];
                     currentTextView.attributedText = [mutStr copy];
                 
                     for(int j=row+1;j<result.count;j++) {
@@ -313,11 +311,9 @@
             }
             case CHECKLIST:
             {
-                //TODO:edit
-                NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
-                if([mutStr containsAttachmentsInRange:NSMakeRange(range.location,1)]==TRUE) {
-                    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                    [mutStr deleteCharactersInRange:NSMakeRange(range.location,1)];
+                NSMutableAttributedString *mutStr = [currentTextView.attributedText mutableCopy];
+                if([mutStr containsAttachmentsInRange:NSMakeRange(range.location-1,1)]==TRUE) {
+                    [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,1)];
                     currentTextView.attributedText = [mutStr copy];
                     return FALSE;
                 }

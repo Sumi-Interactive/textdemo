@@ -86,7 +86,7 @@
     
     if ([text isEqualToString:@"\n"]) {
         if ([keyboardbar isThisLineEmpty:range]) {
-            [keyboardbar dealWithDelete:NSMakeRange(range.location-1, range.length)];
+            [keyboardbar dealWithDelete:NSMakeRange(range.location, range.length)];
             [keyboardbar setTypingMode:NONESTYLE];
             return YES;
         } else {
