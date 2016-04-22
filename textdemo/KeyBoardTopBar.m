@@ -207,175 +207,28 @@
 }
 
 -(BOOL)dealWithDelete:(NSRange)range {
-    if (range.location!=0) {
-        switch([self getTypingMode]) {
-            case UNORDERLIST:
-            {
-                NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-2,2)];
-                if ([firstCharOfPara.string isEqualToString:@"- "]) {
-                    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                    [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
-                    currentTextView.attributedText = [mutStr copy];
-                    return FALSE;
-                }
-            }
-            case ORDERLIST:
-            {
-                NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-            
-                int row = [self getWhichParaCursonIn];
-                int locOfPara = [self getParaLocCursonIn];
-                int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+2;
-                if (locOfPara+locOfIndex==range.location) {
-                    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-                    
-                    [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex)];
-                    currentTextView.attributedText = [mutStr copy];
-                
-                    for(int j=row+1;j<result.count;j++) {
-                        int tmp = [result[j] componentsSeparatedByString:@"."][0].intValue;
-                        if (tmp!=0){
-                            NSRange range = [currentTextView.attributedText.string rangeOfString:result[j]];
-                            NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
-                            NSMutableString *text = [NSMutableString stringWithString:result[j]];
-                            NSString *newIndexLength = [NSString stringWithFormat:@"%d .",tmp];
-                            NSString *newIndex = [NSString stringWithFormat:@"%d. ",tmp-1];
-                            [text replaceCharactersInRange:NSMakeRange(0, newIndexLength.length) withString:newIndex];
-                        
-                            [replace.mutableString replaceCharactersInRange:range withString:text];
-                            currentTextView.attributedText  = [replace copy];
-                        } else {
-                            break;
-                        }
-                    }
-                
-                    return FALSE;
-                }
-            }
-            case CHECKLIST:
-            {
-                NSMutableAttributedString *mutStr = [currentTextView.attributedText mutableCopy];
-                if([mutStr containsAttachmentsInRange:NSMakeRange(range.location-1,1)]==TRUE) {
-                    [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,1)];
-                    currentTextView.attributedText = [mutStr copy];
-                    return FALSE;
-                }
-            }
-        }
+    switch([self getTypingMode]) {
+        case UNORDERLIST:
+            return [unorderList dealWithDelete:range];
+        case ORDERLIST:
+            return [orderList dealWithDelete:range];
+        case CHECKLIST:
+            return [checkList dealWithDelete:range];
+        default:
+            return TRUE;
     }
-    return TRUE;
 }
 
 -(BOOL)isThisLineEmpty:(NSRange)range {
-    
-    NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-   
-    int row = [self getWhichParaCursonIn];
-    if ([result[row] length]==0)
-        return FALSE;
-    
-    int loc = [self getParaLocCursonIn];
     switch([self getTypingMode]) {
         case ORDERLIST:
-        {
-            NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-            
-            int row = [self getWhichParaCursonIn];
-            int number = (int)[result[row] componentsSeparatedByString:@"."][0].intValue;
-            int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
-            if (number!=0) {
-                if (loc+locOfIndex+1==range.location) {
-                    return TRUE;
-                } else {
-                    return FALSE;
-                }
-            }
-        }
-        case CHECKLIST:
-        {
-            NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
-            if([mutStr containsAttachmentsInRange:NSMakeRange(loc,1)]==TRUE) {
-                if (range.location==loc+1) {
-                    return TRUE;
-                } else {
-                    return FALSE;
-                }
-            }
-        }
+            return [orderList isThisLineEmpty:range];
         case UNORDERLIST:
-        {
-            NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(loc,2)];
-            if ([firstCharOfPara.string isEqualToString:@"- "]) {
-                if (loc+2==range.location) {
-                    return TRUE;
-                } else {
-                    return FALSE;
-                }
-            }
-        }
-    }
-    return FALSE;
-}
-
--(void)editAttributeString:(NSString*)text :(NSRange)range{
-    NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
-    [replace.mutableString replaceCharactersInRange:range withString:text];
-    currentTextView.attributedText  = [replace copy];
-}
-
--(void)deleteParaIndex {
-    NSRange range = currentTextView.selectedRange;
-    if([self isParaContainIndex:currentTextView.selectedRange]==FALSE) return;
-    switch([self getParaTypingMode:currentTextView.selectedRange]){
-        case UNORDERLIST:
-        {
-            int loc = [self getParaLocCursonIn];
-            NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-            [mutStr deleteCharactersInRange:NSMakeRange(loc,2)];
-            currentTextView.attributedText = [mutStr copy];
-            range.location-=2;
-            currentTextView.selectedRange = range;
-            break;
-        }
-        case ORDERLIST:
-        {
-            NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-            int row = [self getWhichParaCursonIn];
-            int loc = [self getParaLocCursonIn];
-            int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
-            
-            NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-            [mutStr deleteCharactersInRange:NSMakeRange(loc,locOfIndex+1)];
-            currentTextView.attributedText = [mutStr copy];
-            range.location = range.location - locOfIndex-1;
-            currentTextView.selectedRange = range;
-            break;
-        }
+            return [unorderList isThisLineEmpty:range];
         case CHECKLIST:
-        {
-            int loc = [self getParaLocCursonIn];
-            NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-            [mutStr deleteCharactersInRange:NSMakeRange(loc,1)];
-            currentTextView.attributedText = [mutStr copy];
-            
-            break;
-        }
-    }
-}
-
--(BOOL)isParaContainIndex:(NSRange)range {
-    NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
-    int row = [self getWhichParaCursonIn];
-    int loc = [self getParaLocCursonIn];
-    NSMutableAttributedString *str = [currentTextView.attributedText mutableCopy];
-    if ([result[row] componentsSeparatedByString:@"."][0].intValue!=0) {
-        return TRUE;
-    } else if([result[row] length]>=2 && [[result[row] substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"- "]) {
-        return TRUE;
-    } else if(loc+1<=str.length &&[str containsAttachmentsInRange:NSMakeRange(loc, 1)]==TRUE) {
-        return TRUE;
-    } else {
-        return FALSE;
+            return [checkList isThisLineEmpty:range];
+        default:
+            return FALSE;
     }
 }
 
