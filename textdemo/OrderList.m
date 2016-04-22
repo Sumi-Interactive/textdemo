@@ -123,4 +123,13 @@
     currentTextView.selectedRange = range;
 }
 
+-(BOOL)isParaContainIndex:(NSRange)range {
+    NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
+    int row = [self getWhichParaCursonIn];
+    if ([result[row] componentsSeparatedByString:@"."][0].intValue!=0) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 @end

@@ -68,20 +68,4 @@
     currentTextView.attributedText  = [replace copy];
 }
 
--(BOOL)isParaContainIndex:(NSRange)range {
-    NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
-    int row = [self getWhichParaCursonIn];
-    int loc = [self getParaLocCursonIn];
-    NSMutableAttributedString *str = [currentTextView.attributedText mutableCopy];
-    if ([result[row] componentsSeparatedByString:@"."][0].intValue!=0) {
-        return TRUE;
-    } else if([result[row] length]>=2 && [[result[row] substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"- "]) {
-        return TRUE;
-    } else if(loc+1<=str.length &&[str containsAttachmentsInRange:NSMakeRange(loc, 1)]==TRUE) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
-}
-
 @end

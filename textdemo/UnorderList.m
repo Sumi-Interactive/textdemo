@@ -66,4 +66,14 @@
     range.location-=2;
     currentTextView.selectedRange = range;
 };
+
+-(BOOL)isParaContainIndex:(NSRange)range {
+    NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
+    int row = [self getWhichParaCursonIn];
+    if([result[row] length]>=2 && [[result[row] substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"- "]) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 @end

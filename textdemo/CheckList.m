@@ -65,4 +65,13 @@
     currentTextView.attributedText = [mutStr copy];
 }
 
+-(BOOL)isParaContainIndex:(NSRange)range {
+    int loc = [self getParaLocCursonIn];
+    NSMutableAttributedString *str = [currentTextView.attributedText mutableCopy];
+    if(loc+1<=str.length &&[str containsAttachmentsInRange:NSMakeRange(loc, 1)]==TRUE) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 @end

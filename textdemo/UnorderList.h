@@ -21,4 +21,6 @@
 
 -(void)deleteParaIndex;
 
+-(BOOL)isParaContainIndex:(NSRange)range;
+
 @end

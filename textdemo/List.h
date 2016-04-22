@@ -22,6 +22,4 @@
 
 -(id)init:(UITextView *)textView;
 
--(BOOL)isParaContainIndex:(NSRange)range;
-
 @end
