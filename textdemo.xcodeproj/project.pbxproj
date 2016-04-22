@@ -19,6 +19,7 @@
 		D09CFE661CC9F4C200170AC4 /* OrderList.m in Sources */ = {isa = PBXBuildFile; fileRef = D09CFE651CC9F4C200170AC4 /* OrderList.m */; };
 		D09CFE691CC9F5D100170AC4 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = D09CFE681CC9F5D100170AC4 /* List.m */; };
 		D09CFE6C1CCA007600170AC4 /* UnorderList.m in Sources */ = {isa = PBXBuildFile; fileRef = D09CFE6B1CCA007600170AC4 /* UnorderList.m */; };
+		D09CFE6F1CCA032B00170AC4 /* CheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = D09CFE6E1CCA032B00170AC4 /* CheckList.m */; };
 		D0BEE4641CC0A307007AF6BC /* 010.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BEE4621CC0A307007AF6BC /* 010.png */; };
 		D0BEE4651CC0A307007AF6BC /* 011.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BEE4631CC0A307007AF6BC /* 011.png */; };
 		D0EE995E1CBB9CFF00849E49 /* KeyBoardTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE995D1CBB9CFF00849E49 /* KeyBoardTopBar.m */; };
@@ -67,6 +68,8 @@
 		D09CFE6A1CC9F5E300170AC4 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		D09CFE6B1CCA007600170AC4 /* UnorderList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnorderList.m; sourceTree = "<group>"; };
 		D09CFE6D1CCA008500170AC4 /* UnorderList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnorderList.h; sourceTree = "<group>"; };
+		D09CFE6E1CCA032B00170AC4 /* CheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckList.m; sourceTree = "<group>"; };
+		D09CFE701CCA033800170AC4 /* CheckList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckList.h; sourceTree = "<group>"; };
 		D0BEE4621CC0A307007AF6BC /* 010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 010.png; path = res/010.png; sourceTree = SOURCE_ROOT; };
 		D0BEE4631CC0A307007AF6BC /* 011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 011.png; path = res/011.png; sourceTree = SOURCE_ROOT; };
 		D0EE995C1CBB9CD800849E49 /* KeyboardTopBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardTopBar.h; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				D09CFE6A1CC9F5E300170AC4 /* List.h */,
 				D09CFE6B1CCA007600170AC4 /* UnorderList.m */,
 				D09CFE6D1CCA008500170AC4 /* UnorderList.h */,
+				D09CFE6E1CCA032B00170AC4 /* CheckList.m */,
+				D09CFE701CCA033800170AC4 /* CheckList.h */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09CFE6F1CCA032B00170AC4 /* CheckList.m in Sources */,
 				D0EE995E1CBB9CFF00849E49 /* KeyBoardTopBar.m in Sources */,
 				D09CFE6C1CCA007600170AC4 /* UnorderList.m in Sources */,
 				D091649C1CBB7DF1004B7C0B /* ViewController.m in Sources */,

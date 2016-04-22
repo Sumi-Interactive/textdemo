@@ -11,6 +11,7 @@
 @implementation UnorderList : List
 
 -(BOOL)dealWithDelete:(NSRange)range {
+    if (range.location==0) return TRUE;
     NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-2,2)];
     if ([firstCharOfPara.string isEqualToString:@"- "]) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];

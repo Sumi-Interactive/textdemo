@@ -52,6 +52,8 @@
         
         orderList = [[OrderList alloc] init:currentTextView];
         unorderList = [[UnorderList alloc] init:currentTextView];
+        checkList = [[CheckList alloc] init:currentTextView];
+        
         typingMode = NONESTYLE;
         
     }
@@ -70,18 +72,7 @@
     typingMode = UNORDERLIST;
 }
 -(void)addCheckButton {
-    [self deleteParaIndex];
-    NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-    NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
-    attachment.bounds = CGRectMake(0, 0, 30, 30);
-    attachment.image = [UIImage imageNamed:@"010"];
-    [attachment.image setAccessibilityIdentifier:@"unchecked"];
-    NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
-    
-    int loc = [self getParaLocCursonIn];
-    [mutStr insertAttributedString:attachStr atIndex:loc];
-    currentTextView.attributedText = [mutStr copy];
-    
+    [checkList addCheckList];
     typingMode = CHECKLIST;
 }
 
