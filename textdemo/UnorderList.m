@@ -15,12 +15,10 @@
     NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-2,2)];
     if ([firstCharOfPara.string isEqualToString:@"- "]) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-        int row = [self getWhichParaCursonIn];
-        if (row>0)
-            [mutStr deleteCharactersInRange:NSMakeRange(range.location-3,3)];
-        else
-            [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
+        [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
         currentTextView.attributedText = [mutStr copy];
+        
+        currentTextView.selectedRange = NSMakeRange(range.location-2, 0);
     }
 }
 

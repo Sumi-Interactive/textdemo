@@ -14,12 +14,10 @@
     if (range.location==0) return;
     NSMutableAttributedString *mutStr = [currentTextView.attributedText mutableCopy];
     if([mutStr containsAttachmentsInRange:NSMakeRange(range.location-1,1)]==TRUE) {
-        int row = [self getWhichParaCursonIn];
-        if (row>0)
-            [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
-        else
-            [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,1)];
+        [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,1)];
         currentTextView.attributedText = [mutStr copy];
+        
+        currentTextView.selectedRange = NSMakeRange(range.location-1, 0);
     }
 }
 

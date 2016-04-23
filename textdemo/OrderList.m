@@ -19,10 +19,12 @@
     int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+2;
     if (locOfPara+locOfIndex==range.location) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-        if (locOfPara>0)
-            [mutStr deleteCharactersInRange:NSMakeRange(locOfPara-1,locOfIndex+1)];
-        else
+        if (locOfPara>0) {
+            locOfPara = locOfPara-1;
+            [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex+1)];
+        } else {
             [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex)];
+        }
         currentTextView.attributedText = [mutStr copy];
         
         for(int j=row+1;j<result.count;j++) {
@@ -39,6 +41,7 @@
                 currentTextView.attributedText  = [replace copy];
             }
         }
+        currentTextView.selectedRange = NSMakeRange(locOfPara,0);
     }
 }
 
