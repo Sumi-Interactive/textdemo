@@ -14,7 +14,7 @@
     
 }
 
--(BOOL)dealWithDelete:(NSRange)range;
+-(void)dealWithDelete:(NSRange)range;
 
 -(BOOL)isThisLineEmpty:(NSRange)range;
 

@@ -133,16 +133,17 @@
     typingMode = mode;
 }
 
--(BOOL)dealWithDelete:(NSRange)range {
+-(void)dealWithDelete:(NSRange)range {
     switch([self getTypingMode]) {
         case UNORDERLIST:
-            return [unorderList dealWithDelete:range];
+            [unorderList dealWithDelete:range];
+            break;
         case ORDERLIST:
-            return [orderList dealWithDelete:range];
+            [orderList dealWithDelete:range];
+            break;
         case CHECKLIST:
-            return [checkList dealWithDelete:range];
-        default:
-            return TRUE;
+            [checkList dealWithDelete:range];
+            break;
     }
 }
 

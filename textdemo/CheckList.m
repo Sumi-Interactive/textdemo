@@ -10,15 +10,16 @@
 #import "CheckList.h"
 @implementation CheckList : List
 
--(BOOL)dealWithDelete:(NSRange)range {
-    if (range.location==0) return TRUE;
+-(void)dealWithDelete:(NSRange)range {
+    if (range.location==0) return;
     NSMutableAttributedString *mutStr = [currentTextView.attributedText mutableCopy];
     if([mutStr containsAttachmentsInRange:NSMakeRange(range.location-1,1)]==TRUE) {
-        [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,1)];
+        int row = [self getWhichParaCursonIn];
+        if (row>0)
+            [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
+        else
+            [mutStr deleteCharactersInRange:NSMakeRange(range.location-1,1)];
         currentTextView.attributedText = [mutStr copy];
-        return FALSE;
-    } else {
-        return TRUE;
     }
 }
 

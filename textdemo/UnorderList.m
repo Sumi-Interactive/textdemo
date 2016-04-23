@@ -10,16 +10,17 @@
 #import "UnorderList.h"
 @implementation UnorderList : List
 
--(BOOL)dealWithDelete:(NSRange)range {
-    if (range.location<2) return TRUE;
+-(void)dealWithDelete:(NSRange)range {
+    if (range.location<2) return;
     NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-2,2)];
     if ([firstCharOfPara.string isEqualToString:@"- "]) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-        [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
+        int row = [self getWhichParaCursonIn];
+        if (row>0)
+            [mutStr deleteCharactersInRange:NSMakeRange(range.location-3,3)];
+        else
+            [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
         currentTextView.attributedText = [mutStr copy];
-        return FALSE;
-    } else {
-        return TRUE;
     }
 }
 

@@ -10,8 +10,8 @@
 #import "OrderList.h"
 @implementation OrderList : List
 
--(BOOL)dealWithDelete:(NSRange)range {
-    if (range.location==0) return TRUE;
+-(void)dealWithDelete:(NSRange)range {
+    if (range.location==0) return;
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     
     int row = [self getWhichParaCursonIn];
@@ -19,8 +19,10 @@
     int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+2;
     if (locOfPara+locOfIndex==range.location) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
-        
-        [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex)];
+        if (locOfPara>0)
+            [mutStr deleteCharactersInRange:NSMakeRange(locOfPara-1,locOfIndex+1)];
+        else
+            [mutStr deleteCharactersInRange:NSMakeRange(locOfPara,locOfIndex)];
         currentTextView.attributedText = [mutStr copy];
         
         for(int j=row+1;j<result.count;j++) {
@@ -35,11 +37,9 @@
                 
                 [replace.mutableString replaceCharactersInRange:range withString:text];
                 currentTextView.attributedText  = [replace copy];
-                return FALSE;
             }
         }
     }
-    return TRUE;
 }
 
 -(BOOL)isThisLineEmpty:(NSRange)range {

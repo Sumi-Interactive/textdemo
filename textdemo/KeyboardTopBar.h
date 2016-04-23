@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger,typingType){
 
 -(void)setTypingMode:(int)mode;
 
--(BOOL)dealWithDelete:(NSRange)range;
+-(void)dealWithDelete:(NSRange)range;
 
 -(BOOL)isThisLineEmpty:(NSRange)range;
 

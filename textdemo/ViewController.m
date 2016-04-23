@@ -86,7 +86,7 @@
     
     if ([text isEqualToString:@"\n"]) {
         if ([keyboardbar isThisLineEmpty:range]) {
-            [keyboardbar dealWithDelete:NSMakeRange(range.location, range.length)];
+            [keyboardbar deleteParaIndex];
             [keyboardbar setTypingMode:NONESTYLE];
             return YES;
         } else {
@@ -106,10 +106,11 @@
             return NO;
         }
     } else if ([text length] == 0) {
-        if([keyboardbar dealWithDelete:range])
-            return YES;
-        else
+        if ([keyboardbar isThisLineEmpty:NSMakeRange(range.location+1, range.length)]) {
+            [keyboardbar dealWithDelete:NSMakeRange(range.location+1, range.length)];
             return NO;
+        }
+        
     }
     
     return YES;
