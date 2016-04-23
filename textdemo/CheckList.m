@@ -55,15 +55,17 @@
     int loc = [self getParaLocCursonIn];
     [mutStr insertAttributedString:attachStr atIndex:loc];
     currentTextView.attributedText = [mutStr copy];
+    
+    currentTextView.selectedRange = NSMakeRange(loc+1, 0);
 }
 
 -(void)deleteParaIndex {
-    //NSRange range = currentTextView.selectedRange;
     if([self isParaContainIndex:currentTextView.selectedRange]==FALSE) return;
     int loc = [self getParaLocCursonIn];
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
     [mutStr deleteCharactersInRange:NSMakeRange(loc,1)];
     currentTextView.attributedText = [mutStr copy];
+    currentTextView.selectedRange = NSMakeRange(loc, 0);
 }
 
 -(BOOL)isParaContainIndex:(NSRange)range {

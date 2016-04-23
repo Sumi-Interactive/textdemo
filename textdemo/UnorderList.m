@@ -54,7 +54,9 @@
     
     NSString *replace = [NSString stringWithFormat:@"- %@",result[row]];
     
-    [self editAttributeString:replace :NSMakeRange(loc, [result[row] length]) ];
+    [self editAttributeString:replace :NSMakeRange(loc, [result[row] length])];
+    
+    currentTextView.selectedRange = NSMakeRange(loc+[replace length], 0);
 }
 
 -(void)deleteParaIndex {

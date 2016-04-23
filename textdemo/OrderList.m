@@ -103,7 +103,7 @@
             break;
         }
     }
-
+    currentTextView.selectedRange = NSMakeRange(loc+[replace length], 0);
 }
 
 -(void)deleteParaIndex {
