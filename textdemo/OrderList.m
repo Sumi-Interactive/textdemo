@@ -48,6 +48,8 @@
 -(BOOL)isThisLineEmpty:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     int row  = [self getWhichParaCursonIn];
+    if([[result[row] componentsSeparatedByString:@"."] count]==1)
+        return FALSE;
     int number = (int)[result[row] componentsSeparatedByString:@"."][0].intValue;
     NSString *line = [result[row] componentsSeparatedByString:@"."][1];
     if (number!=0&&[line length]<=1) {
@@ -119,7 +121,7 @@
 -(BOOL)isParaContainIndex:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
     int row = [self getWhichParaCursonIn];
-    if ([result[row] componentsSeparatedByString:@"."][0].intValue!=0) {
+    if ([result[row] componentsSeparatedByString:@"."][0].intValue!=0&&[[result[row] componentsSeparatedByString:@"."] count]!=1) {
         return TRUE;
     } else {
         return FALSE;

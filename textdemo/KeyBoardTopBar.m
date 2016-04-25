@@ -35,11 +35,11 @@
         
         view.barStyle = UIBarStyleDefault;
         
-        style = [[NSMutableDictionary alloc] init];
-        
         currentTextView = textView;
         
         list = [[ListController alloc] init:currentTextView];
+        
+        style = [[StyleController alloc] init:currentTextView];
         
         [view setItems:[NSArray arrayWithObjects:
                         bigTitleButtonItem,
@@ -70,32 +70,11 @@
 }
 
 -(void)changeTextToBigTitle {
-    [self dealWithTitle:30];
+    [style setTextSize:30];
 }
-
 
 -(void)changeTextToSmallTitle {
-    [self dealWithTitle:25];
-}
-
--(void) dealWithTitle:(int)font {
-    if (currentTextView.selectedRange.length==0) {
-        [style setValue:[UIFont systemFontOfSize:font] forKey:NSFontAttributeName];
-        [self changeTextFontStyle];
-    } else {
-        
-        NSMutableAttributedString *text =[currentTextView.attributedText mutableCopy];
-        [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:font] range:NSMakeRange(currentTextView.selectedRange.location, currentTextView.selectedRange.length)];
-        
-        NSUInteger tmpLocation = currentTextView.selectedRange.location;
-        NSUInteger tmpLength = currentTextView.selectedRange.length;
-        currentTextView.attributedText = [text copy];
-        currentTextView.selectedRange = NSMakeRange(tmpLocation, tmpLength);
-        
-    }
-}
--(void)changeTextFontStyle {
-    currentTextView.typingAttributes = style;
+    [style setTextSize:25];
 }
 
 -(void)hideKeyBoard {
@@ -114,17 +93,5 @@
     [UIView commitAnimations];
     
 }
-
-//-(void)changeTypingMode {
-//    if ([orderList isParaContainIndex:currentTextView.selectedRange]) {
-//        typingMode = ORDERLIST;
-//    } else if([unorderList isParaContainIndex:currentTextView.selectedRange]) {
-//        typingMode = UNORDERLIST;
-//    } else if ([checkList isParaContainIndex:currentTextView.selectedRange]) {
-//        typingMode = CHECKLIST;
-//    } else {
-//        typingMode = NONESTYLE;
-//    }
-//}
 
 @end

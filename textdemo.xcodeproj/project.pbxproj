@@ -24,6 +24,7 @@
 		D0BEE4641CC0A307007AF6BC /* 010.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BEE4621CC0A307007AF6BC /* 010.png */; };
 		D0BEE4651CC0A307007AF6BC /* 011.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BEE4631CC0A307007AF6BC /* 011.png */; };
 		D0EE995E1CBB9CFF00849E49 /* KeyBoardTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE995D1CBB9CFF00849E49 /* KeyBoardTopBar.m */; };
+		D0F2F4371CCDEC7900CE2E64 /* StyleController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F2F4361CCDEC7900CE2E64 /* StyleController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		D0BEE4631CC0A307007AF6BC /* 011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 011.png; path = res/011.png; sourceTree = SOURCE_ROOT; };
 		D0EE995C1CBB9CD800849E49 /* KeyboardTopBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardTopBar.h; sourceTree = "<group>"; };
 		D0EE995D1CBB9CFF00849E49 /* KeyBoardTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardTopBar.m; sourceTree = "<group>"; };
+		D0F2F4361CCDEC7900CE2E64 /* StyleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleController.m; sourceTree = "<group>"; };
+		D0F2F4381CCDEC8B00CE2E64 /* StyleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,10 +153,12 @@
 				D09164971CBB7DF1004B7C0B /* AppDelegate.h */,
 				D0EE995C1CBB9CD800849E49 /* KeyboardTopBar.h */,
 				D01648AF1CCDCF3C00143147 /* ListController.h */,
+				D0F2F4381CCDEC8B00CE2E64 /* StyleController.h */,
 				D091649A1CBB7DF1004B7C0B /* ViewController.h */,
 				D09164981CBB7DF1004B7C0B /* AppDelegate.m */,
 				D0EE995D1CBB9CFF00849E49 /* KeyBoardTopBar.m */,
 				D01648AD1CCDCF2300143147 /* ListController.m */,
+				D0F2F4361CCDEC7900CE2E64 /* StyleController.m */,
 				D091649B1CBB7DF1004B7C0B /* ViewController.m */,
 				D09164A51CBB7DF1004B7C0B /* Info.plist */,
 				D09164A01CBB7DF1004B7C0B /* Assets.xcassets */,
@@ -403,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01648AE1CCDCF2300143147 /* ListController.m in Sources */,
+				D0F2F4371CCDEC7900CE2E64 /* StyleController.m in Sources */,
 				D09CFE6F1CCA032B00170AC4 /* CheckList.m in Sources */,
 				D0EE995E1CBB9CFF00849E49 /* KeyBoardTopBar.m in Sources */,
 				D09CFE6C1CCA007600170AC4 /* UnorderList.m in Sources */,

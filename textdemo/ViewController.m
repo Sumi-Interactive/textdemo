@@ -1,3 +1,4 @@
+
 //
 //  ViewController.m
 //  textdemo
@@ -89,9 +90,8 @@
             [keyboardbar.list deleteParaIndex];
             return YES;
         } else {
-            int result = [keyboardbar.list getTypingMode];
             [self.textView insertText:@"\n"];
-            switch(result) {
+            switch([keyboardbar.list getTypingMode]) {
                 case ORDERLIST:
                     [keyboardbar addOrderList];
                     break;
@@ -109,7 +109,6 @@
             [keyboardbar.list dealWithDelete:NSMakeRange(range.location+1, range.length)];
             return NO;
         }
-        
     }
     
     return YES;

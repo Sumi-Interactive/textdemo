@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
 #import "ListController.h"
+#import "StyleController.h"
 
 @interface KeyBoardTopBar : UIViewController<HPTextViewTapGestureRecognizerDelegate> {
     
@@ -20,11 +21,11 @@
     
     UIBarButtonItem *spaceButtonItem;
     
-    NSMutableDictionary *style;
-    
     UITextView *currentTextView;
     
     ListController *list;
+    
+    StyleController *style;
 }
 
 @property(nonatomic,retain) UIToolbar *view;
@@ -44,9 +45,5 @@
 -(void)changeTextToSmallTitle;
 
 -(void)hideKeyBoard;
-
--(void)changeTextFontStyle;
-
--(void)dealWithTitle:(int)font;
 
 @end

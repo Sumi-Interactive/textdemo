@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "textdemo/OrderList.m"
-            timestampString = "483246193.360136"
+            filePath = "textdemo/ViewController.m"
+            timestampString = "483265538.684559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-isThisLineEmpty:"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
