@@ -24,20 +24,9 @@
 
 -(BOOL)isThisLineEmpty:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-    
     int row = [self getWhichParaCursonIn];
-    if ([result[row] length]==0)
-        return FALSE;
-    
-    int loc = [self getParaLocCursonIn];
-
-    NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(loc,2)];
-    if ([firstCharOfPara.string isEqualToString:@"- "]) {
-        if (loc+2==range.location) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+    if([result[row] length]==2) {
+        return TRUE;
     } else {
         return FALSE;
     }
