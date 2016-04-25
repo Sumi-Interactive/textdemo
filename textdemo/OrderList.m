@@ -47,20 +47,11 @@
 
 -(BOOL)isThisLineEmpty:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-    
-    int row = [self getWhichParaCursonIn];
-    if ([result[row] length]==0)
-        return FALSE;
-    
-    int loc = [self getParaLocCursonIn];
+    int row  = [self getWhichParaCursonIn];
     int number = (int)[result[row] componentsSeparatedByString:@"."][0].intValue;
-    int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
-    if (number!=0) {
-        if (loc+locOfIndex+1==range.location) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+    NSString *line = [result[row] componentsSeparatedByString:@"."][1];
+    if (number!=0&&[line length]<=1) {
+        return TRUE;
     } else {
         return FALSE;
     }
