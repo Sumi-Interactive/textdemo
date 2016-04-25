@@ -1,16 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h"
-#import "OrderList.h"
-#import "UnorderList.h"
-#import "CheckList.h"
-typedef NS_ENUM(NSInteger,typingType){
-    NONESTYLE = 0,
-    CHECKLIST = 1,
-    ORDERLIST = 2,
-    UNORDERLIST = 3
-};
-
-
+#import "ListController.h"
 
 @interface KeyBoardTopBar : UIViewController<HPTextViewTapGestureRecognizerDelegate> {
     
@@ -30,48 +20,33 @@ typedef NS_ENUM(NSInteger,typingType){
     
     UIBarButtonItem *spaceButtonItem;
     
-    UITextView     *currentTextView;
-    
     NSMutableDictionary *style;
     
-    int typingMode;
+    UITextView *currentTextView;
     
-    OrderList *orderList;
-    UnorderList *unorderList;
-    CheckList *checkList;
+    ListController *list;
 }
 
 @property(nonatomic,retain) UIToolbar *view;
+@property(nonatomic,retain) ListController *list;
 
 
 -(id)init:(UITextView *)textView;
 
 -(void)addCheckButton;
 
--(void)changeTextToBigTitle;
-
--(void)changeTextToSmallTitle;
-
 -(void)addUnorderList;
 
 -(void)addOrderList;
+
+-(void)changeTextToBigTitle;
+
+-(void)changeTextToSmallTitle;
 
 -(void)hideKeyBoard;
 
 -(void)changeTextFontStyle;
 
 -(void)dealWithTitle:(int)font;
-
--(int)getTypingMode;
-
--(void)setTypingMode:(int)mode;
-
--(void)dealWithDelete:(NSRange)range;
-
--(BOOL)isThisLineEmpty:(NSRange)range;
-
--(void)deleteParaIndex;
-
--(void)changeTypingMode;
 
 @end

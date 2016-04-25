@@ -83,14 +83,13 @@
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    [keyboardbar changeTypingMode];
+    [keyboardbar.list changeTypingMode];
     if ([text isEqualToString:@"\n"]) {
-        if ([keyboardbar isThisLineEmpty:range]) {
-            [keyboardbar deleteParaIndex];
-            [keyboardbar setTypingMode:NONESTYLE];
+        if ([keyboardbar.list isThisLineEmpty:range]) {
+            [keyboardbar.list deleteParaIndex];
             return YES;
         } else {
-            int result = [keyboardbar getTypingMode];
+            int result = [keyboardbar.list getTypingMode];
             [self.textView insertText:@"\n"];
             switch(result) {
                 case ORDERLIST:
@@ -106,8 +105,8 @@
             return NO;
         }
     } else if ([text length] == 0) {
-        if ([keyboardbar isThisLineEmpty:NSMakeRange(range.location+1, range.length)]) {
-            [keyboardbar dealWithDelete:NSMakeRange(range.location+1, range.length)];
+        if ([keyboardbar.list isThisLineEmpty:NSMakeRange(range.location+1, range.length)]) {
+            [keyboardbar.list dealWithDelete:NSMakeRange(range.location+1, range.length)];
             return NO;
         }
         

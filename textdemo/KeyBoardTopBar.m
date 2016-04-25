@@ -11,8 +11,9 @@
 @implementation KeyBoardTopBar
 
 @synthesize view;
+@synthesize list;
 
--(id)init:(UITextView *)textView{
+-(id)init:(UITextView *)textView {
     
     if((self = [super init])) {
         
@@ -38,6 +39,8 @@
         
         currentTextView = textView;
         
+        list = [[ListController alloc] init:currentTextView];
+        
         [view setItems:[NSArray arrayWithObjects:
                         bigTitleButtonItem,
                         smallTitleButtonItem,
@@ -49,13 +52,6 @@
                         nil]];
         
         currentTextView.inputAccessoryView = view;
-        
-        orderList = [[OrderList alloc] init:currentTextView];
-        unorderList = [[UnorderList alloc] init:currentTextView];
-        checkList = [[CheckList alloc] init:currentTextView];
-        
-        typingMode = NONESTYLE;
-        
     }
     
     return self;
@@ -63,20 +59,14 @@
 }
 
 -(void)addOrderList {
-    [self deleteParaIndex];
-    [orderList addOrderList];
-    typingMode = ORDERLIST;
+    [list addOrderList];
 }
 
 -(void)addUnorderList {
-    [self deleteParaIndex];
-    [unorderList addUnorderList];
-    typingMode = UNORDERLIST;
+    [list addUnorderList];
 }
 -(void)addCheckButton {
-    [self deleteParaIndex];
-    [checkList addCheckList];
-    typingMode = CHECKLIST;
+    [list addCheckList];
 }
 
 -(void)changeTextToBigTitle {
@@ -125,57 +115,16 @@
     
 }
 
--(int)getTypingMode {
-    return typingMode;
-}
-
--(void)setTypingMode:(int)mode {
-    typingMode = mode;
-}
-
--(void)dealWithDelete:(NSRange)range {
-    switch([self getTypingMode]) {
-        case UNORDERLIST:
-            [unorderList dealWithDelete:range];
-            break;
-        case ORDERLIST:
-            [orderList dealWithDelete:range];
-            break;
-        case CHECKLIST:
-            [checkList dealWithDelete:range];
-            break;
-    }
-}
-
--(BOOL)isThisLineEmpty:(NSRange)range {
-    switch([self getTypingMode]) {
-        case ORDERLIST:
-            return [orderList isThisLineEmpty:range];
-        case UNORDERLIST:
-            return [unorderList isThisLineEmpty:range];
-        case CHECKLIST:
-            return [checkList isThisLineEmpty:range];
-        default:
-            return FALSE;
-    }
-}
-
--(void)deleteParaIndex {
-    [orderList deleteParaIndex];
-    [unorderList deleteParaIndex];
-    [checkList deleteParaIndex];
-}
-
--(void)changeTypingMode {
-    if ([orderList isParaContainIndex:currentTextView.selectedRange]) {
-        typingMode = ORDERLIST;
-    } else if([unorderList isParaContainIndex:currentTextView.selectedRange]) {
-        typingMode = UNORDERLIST;
-    } else if ([checkList isParaContainIndex:currentTextView.selectedRange]) {
-        typingMode = CHECKLIST;
-    } else {
-        typingMode = NONESTYLE;
-    }
-}
+//-(void)changeTypingMode {
+//    if ([orderList isParaContainIndex:currentTextView.selectedRange]) {
+//        typingMode = ORDERLIST;
+//    } else if([unorderList isParaContainIndex:currentTextView.selectedRange]) {
+//        typingMode = UNORDERLIST;
+//    } else if ([checkList isParaContainIndex:currentTextView.selectedRange]) {
+//        typingMode = CHECKLIST;
+//    } else {
+//        typingMode = NONESTYLE;
+//    }
+//}
 
 @end

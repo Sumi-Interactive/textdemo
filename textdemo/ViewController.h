@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "KeyboardTopBar.h"
-
 KeyBoardTopBar *keyboardbar;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    
+}
 
 
 @end
