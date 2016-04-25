@@ -166,4 +166,16 @@
     [checkList deleteParaIndex];
 }
 
+-(void)changeTypingMode {
+    if ([orderList isParaContainIndex:currentTextView.selectedRange]) {
+        typingMode = ORDERLIST;
+    } else if([unorderList isParaContainIndex:currentTextView.selectedRange]) {
+        typingMode = UNORDERLIST;
+    } else if ([checkList isParaContainIndex:currentTextView.selectedRange]) {
+        typingMode = CHECKLIST;
+    } else {
+        typingMode = NONESTYLE;
+    }
+}
+
 @end

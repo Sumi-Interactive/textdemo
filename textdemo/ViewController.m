@@ -83,7 +83,7 @@
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    
+    [keyboardbar changeTypingMode];
     if ([text isEqualToString:@"\n"]) {
         if ([keyboardbar isThisLineEmpty:range]) {
             [keyboardbar deleteParaIndex];

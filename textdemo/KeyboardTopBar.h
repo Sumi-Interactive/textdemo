@@ -72,4 +72,6 @@ typedef NS_ENUM(NSInteger,typingType){
 
 -(void)deleteParaIndex;
 
+-(void)changeTypingMode;
+
 @end
