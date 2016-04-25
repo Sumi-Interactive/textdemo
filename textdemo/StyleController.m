@@ -32,7 +32,7 @@
         NSDictionary *dic = [text attributesAtIndex:currentTextView.selectedRange.location effectiveRange:nil];
         if ((int)((UIFont *)[dic valueForKey:NSFontAttributeName]).pointSize!=30&&
             (int)((UIFont *)[dic valueForKey:NSFontAttributeName]).pointSize!=25) {
-            [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:textSize] range:NSMakeRange(currentTextView.selectedRange.location, currentTextView.selectedRange.length)];
+            [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:textSize] range:currentTextView.selectedRange];
             
             NSUInteger tmpLocation = currentTextView.selectedRange.location;
             NSUInteger tmpLength = currentTextView.selectedRange.length;
@@ -52,8 +52,8 @@
     } else {
         
         NSMutableAttributedString *text =[currentTextView.attributedText mutableCopy];
-        [text removeAttribute:NSFontAttributeName range:NSMakeRange(currentTextView.selectedRange.location, currentTextView.selectedRange.length)];
-        
+        [text removeAttribute:NSFontAttributeName range:currentTextView.selectedRange];
+        [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:currentTextView.selectedRange];
         NSUInteger tmpLocation = currentTextView.selectedRange.location;
         NSUInteger tmpLength = currentTextView.selectedRange.length;
         currentTextView.attributedText = [text copy];
