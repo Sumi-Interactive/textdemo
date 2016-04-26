@@ -30,18 +30,19 @@
     } else {
         NSMutableAttributedString *text =[currentTextView.attributedText mutableCopy];
         NSDictionary *dic = [text attributesAtIndex:currentTextView.selectedRange.location effectiveRange:nil];
-        if ((int)((UIFont *)[dic valueForKey:NSFontAttributeName]).pointSize!=30&&
-            (int)((UIFont *)[dic valueForKey:NSFontAttributeName]).pointSize!=25) {
+        if ((int)((UIFont *)[dic valueForKey:NSFontAttributeName]).pointSize==30 &&
+            textSize==30) {
+            [self resetTextStyle];
+        } else if((int)((UIFont *)[dic valueForKey:NSFontAttributeName]).pointSize==25 &&
+            textSize==25) {
+            [self resetTextStyle];
+        } else {
             [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:textSize] range:currentTextView.selectedRange];
-            
             NSUInteger tmpLocation = currentTextView.selectedRange.location;
             NSUInteger tmpLength = currentTextView.selectedRange.length;
             currentTextView.attributedText = [text copy];
             currentTextView.selectedRange = NSMakeRange(tmpLocation, tmpLength);
-        } else {
-            [self resetTextStyle];
         }
-        
     }
 }
 
