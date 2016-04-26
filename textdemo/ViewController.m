@@ -21,10 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    rangeWhenClickCheck.location = -1;
+    
     self.textView.layer.borderWidth = 1;
     self.textView.allowsEditingTextAttributes = TRUE;
-    self.textView.editable = TRUE;
-    self.textView.delegate=self;
+    self.textView.editable = YES;
+    self.textView.delegate = self;
     keyboardbar = [[KeyBoardTopBar alloc]init:self.textView];
     self.tapTextView.delegate = self;
     
@@ -62,10 +64,12 @@
 }
 -(void)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer handleTapOnTextAttachment:(NSTextAttachment*)textAttachment inRange:(NSRange)characterRange
 {
+    rangeWhenClickCheck = self.textView.selectedRange;
     NSMutableAttributedString * mutStr = [self.textView.attributedText mutableCopy];
     [mutStr deleteCharactersInRange:characterRange];
     NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
     attachment.bounds = CGRectMake(0, 0, 30, 30);
+    
     if ([textAttachment.image.accessibilityIdentifier isEqualToString: @"unchecked"])  {
         attachment.image = [UIImage imageNamed:@"011"];
         [attachment.image setAccessibilityIdentifier:@"checked"];
@@ -112,6 +116,12 @@
     }
     
     return YES;
+}
+- (void)textViewDidChangeSelection:(UITextView *)tve {
+    if (rangeWhenClickCheck.location!=-1) {
+        tve.selectedRange = rangeWhenClickCheck;
+        rangeWhenClickCheck.location = -1;
+    }
 }
 
 @end

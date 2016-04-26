@@ -11,7 +11,7 @@
 KeyBoardTopBar *keyboardbar;
 
 @interface ViewController : UIViewController {
-    
+    NSRange rangeWhenClickCheck;
 }
 
 

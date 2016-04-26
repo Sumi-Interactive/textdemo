@@ -53,8 +53,6 @@
     int loc = [self getParaLocCursonIn];
     [mutStr insertAttributedString:attachStr atIndex:loc];
     currentTextView.attributedText = [mutStr copy];
-    
-    currentTextView.selectedRange = NSMakeRange(loc+1, 0);
 }
 
 -(void)deleteParaIndex {
