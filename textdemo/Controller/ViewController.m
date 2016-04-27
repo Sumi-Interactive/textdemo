@@ -127,7 +127,7 @@
 #pragma mark - Button Actions
 
 - (IBAction)alertTextButtonAction:(id)sender {
-    NSString *text = self.textView.text;
+    NSAttributedString *text = self.textView.attributedText;
     
     NSLog(@"%@", text);
     
