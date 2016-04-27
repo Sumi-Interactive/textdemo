@@ -131,12 +131,12 @@
     
     NSLog(@"%@", text);
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"text content" message:text preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"text content" message:text preferredStyle:UIAlertControllerStyleAlert];
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        
+//    }]];
+//    
+//    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
