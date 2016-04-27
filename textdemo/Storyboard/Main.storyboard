@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="l5N-wT-VGx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-SD-m9R">
-                                <rect key="frame" x="0.0" y="30" width="320" height="390"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-SD-m9R">
+                                <rect key="frame" x="40" y="60" width="520" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <attributedString key="attributedText">
@@ -40,9 +40,13 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="J3z-SD-m9R" secondAttribute="trailing" constant="40" id="7ad-1Q-nLH"/>
+                            <constraint firstItem="J3z-SD-m9R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="9II-u5-CXP"/>
+                            <constraint firstItem="l5N-wT-VGx" firstAttribute="top" secondItem="J3z-SD-m9R" secondAttribute="bottom" constant="40" id="Do4-rc-qd5"/>
+                            <constraint firstItem="J3z-SD-m9R" firstAttribute="top" secondItem="puC-mF-Xg0" secondAttribute="bottom" constant="40" id="PfW-nY-lRF"/>
+                        </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="800"/>
                     <connections>
                         <outlet property="tapTextView" destination="RGq-9J-gcn" id="Ls5-14-U1L"/>
                         <outlet property="textView" destination="J3z-SD-m9R" id="JVZ-Oz-dUh"/>
@@ -51,7 +55,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="RGq-9J-gcn" customClass="HPTextViewTapGestureRecognizer"/>
             </objects>
-            <point key="canvasLocation" x="217.5" y="337.5"/>
+            <point key="canvasLocation" x="217" y="337"/>
         </scene>
     </scenes>
 </document>

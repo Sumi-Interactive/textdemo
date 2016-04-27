@@ -46,7 +46,7 @@
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
     NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
     attachment.bounds = CGRectMake(0, 0, 30, 30);
-    attachment.image = [UIImage imageNamed:@"010"];
+    attachment.image = [UIImage imageNamed:@"icon-checkbox-normal"];
     [attachment.image setAccessibilityIdentifier:@"unchecked"];
     NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
     

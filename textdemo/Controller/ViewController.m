@@ -71,14 +71,14 @@
     attachment.bounds = CGRectMake(0, 0, 30, 30);
     
     if ([textAttachment.image.accessibilityIdentifier isEqualToString: @"unchecked"])  {
-        attachment.image = [UIImage imageNamed:@"011"];
+        attachment.image = [UIImage imageNamed:@"icon-checkbox-checked"];
         [attachment.image setAccessibilityIdentifier:@"checked"];
         NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
         
         [mutStr insertAttributedString:attachStr atIndex:characterRange.location];
         self.textView.attributedText = [mutStr copy];
     } else if ([textAttachment.image.accessibilityIdentifier isEqualToString:@"checked"]) {
-        attachment.image = [UIImage imageNamed:@"010"];
+        attachment.image = [UIImage imageNamed:@"icon-checkbox-normal"];
         [attachment.image setAccessibilityIdentifier:@"unchecked"];
         NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
         
