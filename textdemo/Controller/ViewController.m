@@ -124,4 +124,19 @@
     }
 }
 
+#pragma mark - Button Actions
+
+- (IBAction)alertTextButtonAction:(id)sender {
+    NSString *text = self.textView.text;
+    
+    NSLog(@"%@", text);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"text content" message:text preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 @end

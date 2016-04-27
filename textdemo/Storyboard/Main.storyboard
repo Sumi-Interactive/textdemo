@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3z-SD-m9R">
-                                <rect key="frame" x="40" y="60" width="520" height="500"/>
+                                <rect key="frame" x="40" y="72" width="520" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <attributedString key="attributedText">
@@ -38,14 +38,40 @@
                                     <outletCollection property="gestureRecognizers" destination="RGq-9J-gcn" appends="YES" id="afE-zg-jLz"/>
                                 </connections>
                             </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DU-C3-8kI">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="oul-XX-LO1">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="C4m-Ro-5AO">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qMi-EJ-dzC">
+                                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Alert Text"/>
+                                                <connections>
+                                                    <action selector="alertTextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f9c-Iu-3gA"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="J3z-SD-m9R" secondAttribute="trailing" constant="40" id="7ad-1Q-nLH"/>
                             <constraint firstItem="J3z-SD-m9R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="9II-u5-CXP"/>
                             <constraint firstItem="l5N-wT-VGx" firstAttribute="top" secondItem="J3z-SD-m9R" secondAttribute="bottom" constant="40" id="Do4-rc-qd5"/>
+                            <constraint firstAttribute="trailing" secondItem="2DU-C3-8kI" secondAttribute="trailing" id="Ghn-0a-NVY"/>
                             <constraint firstItem="J3z-SD-m9R" firstAttribute="top" secondItem="puC-mF-Xg0" secondAttribute="bottom" constant="40" id="PfW-nY-lRF"/>
+                            <constraint firstItem="2DU-C3-8kI" firstAttribute="top" secondItem="puC-mF-Xg0" secondAttribute="bottom" id="myt-vN-2GE"/>
+                            <constraint firstItem="2DU-C3-8kI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uhr-lU-OPE"/>
+                            <constraint firstItem="J3z-SD-m9R" firstAttribute="top" secondItem="2DU-C3-8kI" secondAttribute="bottom" constant="8" id="z5C-6E-fTO"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PfW-nY-lRF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tapTextView" destination="RGq-9J-gcn" id="Ls5-14-U1L"/>
