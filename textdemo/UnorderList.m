@@ -13,7 +13,7 @@
 -(void)dealWithDelete:(NSRange)range {
     if (range.location<2) return;
     NSAttributedString *firstCharOfPara = [currentTextView.attributedText attributedSubstringFromRange:NSMakeRange(range.location-2,2)];
-    if ([firstCharOfPara.string isEqualToString:@"\u273A "]) {
+    if ([firstCharOfPara.string isEqualToString:@"\u2013 "]) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
         [mutStr deleteCharactersInRange:NSMakeRange(range.location-2,2)];
         currentTextView.attributedText = [mutStr copy];
@@ -39,9 +39,9 @@
     int row = [self getWhichParaCursonIn];
     int loc = [self getParaLocCursonIn];
     
-    NSString *replace = [NSString stringWithFormat:@"\u273A %@",result[row]];
+    NSString *replace = [NSString stringWithFormat:@"\u2013 %@",result[row]];
     
-    [self editAttributeString:replace :NSMakeRange(loc, [result[row] length])];
+    [self editAttributeStringByAddUnorderList:@"\u2013 " :loc];
     
     currentTextView.selectedRange = NSMakeRange(loc+[replace length], 0);
 }
@@ -60,7 +60,7 @@
 -(BOOL)isParaContainIndex:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
     int row = [self getWhichParaCursonIn];
-    if([result[row] length]>=2 && [[result[row] substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"\u273A "]) {
+    if([result[row] length]>=2 && [[result[row] substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"\u2013 "]) {
         return TRUE;
     } else {
         return FALSE;

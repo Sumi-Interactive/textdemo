@@ -20,6 +20,8 @@
 
 -(void)editAttributeString:(NSString*)text :(NSRange)range;
 
+-(void)editAttributeStringByAddUnorderList:(NSString*)mark :(int)loc;
+
 -(id)init:(UITextView *)textView;
 
 @end

@@ -62,9 +62,15 @@
     return row;
 }
 
--(void)editAttributeString:(NSString*)text :(NSRange)range{
+-(void)editAttributeString:(NSString*)text :(NSRange)range {
     NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
     [replace.mutableString replaceCharactersInRange:range withString:text];
+    currentTextView.attributedText  = [replace copy];
+}
+
+-(void)editAttributeStringByAddUnorderList:(NSString*)mark :(int)loc {
+    NSMutableAttributedString *replace = [currentTextView.attributedText mutableCopy];
+    [replace.mutableString insertString:mark atIndex:loc];
     currentTextView.attributedText  = [replace copy];
 }
 
