@@ -1,1144 +1,821 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0818F7666751366D01B44F77751EB467</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>16F69B82788D595395A5598FC8E61805</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0951105B27DCBE64BBA0CF60CF3BD676</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-textdemo.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0A549C59D7B755AE094E600F50EE2AE0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>39CB1D94D15376A719931444762C3FCC</string>
-				<string>69284E8A9A85D1BD4592FD235588816C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0F13CD994ED5CB3DB80BBCF062F3D1D1</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods_textdemo.framework</string>
-			<key>path</key>
-			<string>Pods_textdemo.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>16F69B82788D595395A5598FC8E61805</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1B1B876980761369F3E47A4B098531CB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>9926A2752495C3D091B68533CA1C330C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>1E48EAA2929C1B1BD9B8E99227574D09</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>FBD89C36173A9D19F3B2311C0245D038</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2229997D74AD2EEF8DB6CA6D6EF6E46D</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>35CF4052668CCD0E19DA5288A753C53C</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/HPTextViewTapGestureRecognizer/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>HPTextViewTapGestureRecognizer</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>2954656DA976C64CF9781CF73B63DB93</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>58CE0DDFD4F38C0E0CE3705A42F25804</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0A549C59D7B755AE094E600F50EE2AE0</string>
-				<string>1B1B876980761369F3E47A4B098531CB</string>
-				<string>98B478D0316A84E508C40FD08D68BA91</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>HPTextViewTapGestureRecognizer</string>
-			<key>productName</key>
-			<string>HPTextViewTapGestureRecognizer</string>
-			<key>productReference</key>
-			<string>84765FFA64075C6938E093071BE7BC95</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>2B389FAB51F6EEA43F72CA7BDC8E8E28</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>2B389FAB51F6EEA43F72CA7BDC8E8E28</string>
-				<string>5A0C6FE968931D888F00C9EC18DDF5BC</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2E8F1B820B75BF815AFA8FCB9D2BCD1C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8A32ECC7FF5C4B8285A5FC747534644D</string>
-				<string>B85C29E4C2595E57B3A77C61F210D670</string>
-				<string>F43CF3ABB58ABF1A22E79FBBD11A2DCB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>HPTextViewTapGestureRecognizer</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>312CE2AF89E0F257D71E48141A069063</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>0951105B27DCBE64BBA0CF60CF3BD676</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-textdemo/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-textdemo/Pods-textdemo.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_textdemo</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>345FC6541208657AC0E96A6F66DD89FF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>83CB001A8AD10BDAFFB8BEC7FDD8E66C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>35CF4052668CCD0E19DA5288A753C53C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>39CB1D94D15376A719931444762C3FCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D0ECB0EDE0AE024E954D95D3525F399E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3E4E89230EF59BC255123B67864ACF77</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>4D57D64333E6630CC295D78ED450A21D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5634CD8F372A313DEC67A4FFA5A82873</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>2954656DA976C64CF9781CF73B63DB93</string>
-			<key>remoteInfo</key>
-			<string>HPTextViewTapGestureRecognizer</string>
-		</dict>
-		<key>58CE0DDFD4F38C0E0CE3705A42F25804</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>2229997D74AD2EEF8DB6CA6D6EF6E46D</string>
-				<string>BEE533BEAAD701BAA067AE60A83FFB64</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5A0C6FE968931D888F00C9EC18DDF5BC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>62B6C3C55E57C27747E569BB4CDFA166</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>66030C18858AF4D5FF7B6FE20CD97EA2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F448D9592A4F98AA3328D3E4D1E5DA41</string>
-				<string>312CE2AF89E0F257D71E48141A069063</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>6813E79CD13E9DEFB98F7E06DBAEC9C3</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>HPTextViewTapGestureRecognizer</string>
-			<key>target</key>
-			<string>2954656DA976C64CF9781CF73B63DB93</string>
-			<key>targetProxy</key>
-			<string>5634CD8F372A313DEC67A4FFA5A82873</string>
-		</dict>
-		<key>69284E8A9A85D1BD4592FD235588816C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B85C29E4C2595E57B3A77C61F210D670</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
-				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>FB2376B407CF1CE5009D9D61B97A6704</string>
-				<string>E70108BAFC57D3AD5258CA1DA41B9C72</string>
-				<string>B539E4197F8E25AE1A42E202B062B7D5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>83CB001A8AD10BDAFFB8BEC7FDD8E66C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-textdemo-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>84765FFA64075C6938E093071BE7BC95</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>HPTextViewTapGestureRecognizer.framework</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8A32ECC7FF5C4B8285A5FC747534644D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>HPTextViewTapGestureRecognizer.h</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>98B478D0316A84E508C40FD08D68BA91</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BDA74E932D17D0EEE5468C435FDBEC41</string>
-				<string>B5A8F8461ECB7598119DD602D6E047B2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>9926A2752495C3D091B68533CA1C330C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9B9F83A4C495B7AB52647DFB717B95DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BBF7F3F06EC99983B35D82EB4DAE09E7</string>
-				<string>F54960F2AF75175F7B71176DE3275DE2</string>
-				<string>B0B6958484143A2794FF703A758C4F65</string>
-				<string>CB1AA2253C84B7D493AACAA498D1BA75</string>
-				<string>BDAE9C28C5D5B90C7C4198700061E820</string>
-				<string>D96572E4BCCAB1BCA344BE58DD8C31DA</string>
-				<string>F21F66FAB7367147F7F9FC798F257847</string>
-				<string>83CB001A8AD10BDAFFB8BEC7FDD8E66C</string>
-				<string>BEEC6EEC2645E099355DC80E5E172070</string>
-				<string>0951105B27DCBE64BBA0CF60CF3BD676</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-textdemo</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-textdemo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B0B6958484143A2794FF703A758C4F65</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-textdemo-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B539E4197F8E25AE1A42E202B062B7D5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9B9F83A4C495B7AB52647DFB717B95DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B5A8F8461ECB7598119DD602D6E047B2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8A32ECC7FF5C4B8285A5FC747534644D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>B85C29E4C2595E57B3A77C61F210D670</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>HPTextViewTapGestureRecognizer.m</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B96117544341BD7E3E18DF19E30BCC5A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>66030C18858AF4D5FF7B6FE20CD97EA2</string>
-			<key>buildPhases</key>
-			<array>
-				<string>1E48EAA2929C1B1BD9B8E99227574D09</string>
-				<string>0818F7666751366D01B44F77751EB467</string>
-				<string>C2FF93779013B35B4E993BE464E894F2</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>6813E79CD13E9DEFB98F7E06DBAEC9C3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-textdemo</string>
-			<key>productName</key>
-			<string>Pods-textdemo</string>
-			<key>productReference</key>
-			<string>0F13CD994ED5CB3DB80BBCF062F3D1D1</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>BBF7F3F06EC99983B35D82EB4DAE09E7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BF6342C8B29F4CEEA088EFF7AB4DE362</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BDA74E932D17D0EEE5468C435FDBEC41</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC7616DB3C9AD5FFC0683FDA514342AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>BDAE9C28C5D5B90C7C4198700061E820</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-textdemo-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BEE533BEAAD701BAA067AE60A83FFB64</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>35CF4052668CCD0E19DA5288A753C53C</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/HPTextViewTapGestureRecognizer/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>HPTextViewTapGestureRecognizer</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>BEEC6EEC2645E099355DC80E5E172070</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-textdemo.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BF6342C8B29F4CEEA088EFF7AB4DE362</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3E4E89230EF59BC255123B67864ACF77</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C2FF93779013B35B4E993BE464E894F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>345FC6541208657AC0E96A6F66DD89FF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB1AA2253C84B7D493AACAA498D1BA75</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-textdemo-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D0ECB0EDE0AE024E954D95D3525F399E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D41D8CD98F00B204E9800998ECF8427E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0700</string>
-				<key>LastUpgradeCheck</key>
-				<string>0700</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>7DB346D0F39D3F0E887471402A8071AB</string>
-			<key>productRefGroup</key>
-			<string>E70108BAFC57D3AD5258CA1DA41B9C72</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>2954656DA976C64CF9781CF73B63DB93</string>
-				<string>B96117544341BD7E3E18DF19E30BCC5A</string>
-			</array>
-		</dict>
-		<key>D96572E4BCCAB1BCA344BE58DD8C31DA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-textdemo-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC7616DB3C9AD5FFC0683FDA514342AF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E70108BAFC57D3AD5258CA1DA41B9C72</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>84765FFA64075C6938E093071BE7BC95</string>
-				<string>0F13CD994ED5CB3DB80BBCF062F3D1D1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EED6D92FFF9038C5AB00226913E70FA1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>HPTextViewTapGestureRecognizer.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F21F66FAB7367147F7F9FC798F257847</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-textdemo-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F43CF3ABB58ABF1A22E79FBBD11A2DCB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>EED6D92FFF9038C5AB00226913E70FA1</string>
-				<string>35CF4052668CCD0E19DA5288A753C53C</string>
-				<string>D0ECB0EDE0AE024E954D95D3525F399E</string>
-				<string>4D57D64333E6630CC295D78ED450A21D</string>
-				<string>DC7616DB3C9AD5FFC0683FDA514342AF</string>
-				<string>62B6C3C55E57C27747E569BB4CDFA166</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/HPTextViewTapGestureRecognizer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F448D9592A4F98AA3328D3E4D1E5DA41</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>BEEC6EEC2645E099355DC80E5E172070</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-textdemo/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-textdemo/Pods-textdemo.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_textdemo</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F54960F2AF75175F7B71176DE3275DE2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods-textdemo.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FB2376B407CF1CE5009D9D61B97A6704</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2E8F1B820B75BF815AFA8FCB9D2BCD1C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FBD89C36173A9D19F3B2311C0245D038</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BDAE9C28C5D5B90C7C4198700061E820</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D41D8CD98F00B204E9800998ECF8427E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		140AC3E4C056AC7F06AD8A4CE5C5C990 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
+		20FAEA249A753DAFECCF1B96488F22CE /* Pods-textdemoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD50AD42EEEE9395B8A7C4580BA4E47 /* Pods-textdemoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E9EED59FE3EF48D650108A14CEA68A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
+		30D3F25D628B80324597C4E99ABACCB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
+		312C131BE579FF4FFA31059707C4F3B7 /* Pods-textdemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F24135F770237AAEBE62A0B32E3E58C /* Pods-textdemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39CB1D94D15376A719931444762C3FCC /* HPTextViewTapGestureRecognizer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ECB0EDE0AE024E954D95D3525F399E /* HPTextViewTapGestureRecognizer-dummy.m */; };
+		69284E8A9A85D1BD4592FD235588816C /* HPTextViewTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C29E4C2595E57B3A77C61F210D670 /* HPTextViewTapGestureRecognizer.m */; };
+		717E2640A0CE4E12C2F74487D6B4D5B5 /* Pods-textdemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C17FAB56A813F26F41FE4B3819D27B5F /* Pods-textdemo-dummy.m */; };
+		865436D43B2D1B10727E474A2D7DA3D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */; };
+		AD98EA04A95D0CEC536CF6F928B9695F /* Pods-textdemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCDC8634699B8CCFE70B4CF6EA6F680 /* Pods-textdemoTests-dummy.m */; };
+		B5A8F8461ECB7598119DD602D6E047B2 /* HPTextViewTapGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A32ECC7FF5C4B8285A5FC747534644D /* HPTextViewTapGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDA74E932D17D0EEE5468C435FDBEC41 /* HPTextViewTapGestureRecognizer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC7616DB3C9AD5FFC0683FDA514342AF /* HPTextViewTapGestureRecognizer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C570D017A21A2EC344404F1847189B5B /* Pods-textdemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B4E81246670147EC48E210EB34BA3 /* Pods-textdemoUITests-dummy.m */; };
+		F8DADB6279F8671548D13FDCF7CEEE99 /* Pods-textdemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F73A9C93AE8CB87E5B97679F1437CAE7 /* Pods-textdemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		477A9C506789AE0211BF25E890A608D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2954656DA976C64CF9781CF73B63DB93;
+			remoteInfo = HPTextViewTapGestureRecognizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01BD577A17891720DBA100C202B1B8C0 /* Pods-textdemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textdemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		020695A2F46E0E30A478CF18E48AA406 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02ADE76DA7CF4806C3E2BF727BD6E953 /* Pods-textdemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textdemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		066B72232BE7A345254EC3AB3AE7D62D /* Pods-textdemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-textdemo-frameworks.sh"; sourceTree = "<group>"; };
+		08BD0BBD7CDEE5871F934A99379269CB /* Pods-textdemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-textdemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0936C5FECB73B6AF8605CCB42FAFD7A5 /* Pods-textdemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textdemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		1289FA53DE75C7853806CD38F1DC40DD /* Pods-textdemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-textdemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1B382A37E43FBAE26028AA96D3397883 /* Pods_textdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_textdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE3BC1FBF26B97F1698822A0DC8A0CC /* Pods-textdemoUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-textdemoUITests-frameworks.sh"; sourceTree = "<group>"; };
+		22EA807DA757B9E34218B12F223CB4D8 /* Pods-textdemoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-textdemoTests-resources.sh"; sourceTree = "<group>"; };
+		35CF4052668CCD0E19DA5288A753C53C /* HPTextViewTapGestureRecognizer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HPTextViewTapGestureRecognizer.xcconfig; sourceTree = "<group>"; };
+		3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		39EB77EDBD4E216A8697038BC8602130 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D57D64333E6630CC295D78ED450A21D /* HPTextViewTapGestureRecognizer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HPTextViewTapGestureRecognizer-prefix.pch"; sourceTree = "<group>"; };
+		531D6DEF334D805A9959E57A55ECE437 /* Pods-textdemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-textdemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		5F21D173C767F992318332E17085465A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62B6C3C55E57C27747E569BB4CDFA166 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67F4BF97A2D76F27950FC4D6D551E3BD /* Pods-textdemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-textdemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6C07E16F126C159A3130737755568100 /* HPTextViewTapGestureRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HPTextViewTapGestureRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F24135F770237AAEBE62A0B32E3E58C /* Pods-textdemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-textdemo-umbrella.h"; sourceTree = "<group>"; };
+		790B4E81246670147EC48E210EB34BA3 /* Pods-textdemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-textdemoUITests-dummy.m"; sourceTree = "<group>"; };
+		7E8A36928AC3D3435E75A32AEACC3FBA /* Pods-textdemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-textdemoTests.modulemap"; sourceTree = "<group>"; };
+		7F9DABE40039148BF84F94B10D84BD54 /* Pods_textdemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_textdemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD50AD42EEEE9395B8A7C4580BA4E47 /* Pods-textdemoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-textdemoUITests-umbrella.h"; sourceTree = "<group>"; };
+		8A32ECC7FF5C4B8285A5FC747534644D /* HPTextViewTapGestureRecognizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HPTextViewTapGestureRecognizer.h; path = HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.h; sourceTree = "<group>"; };
+		8E09BD905046192E9AF6D4A30E34490C /* Pods-textdemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-textdemo.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A78F490013782E712C35C38C88C275A9 /* Pods-textdemoUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-textdemoUITests-resources.sh"; sourceTree = "<group>"; };
+		A966163D48B1BD002F3DB20B9754765D /* Pods-textdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textdemo.release.xcconfig"; sourceTree = "<group>"; };
+		B85C29E4C2595E57B3A77C61F210D670 /* HPTextViewTapGestureRecognizer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HPTextViewTapGestureRecognizer.m; path = HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.m; sourceTree = "<group>"; };
+		B964FD37FF2E6D44B51C24AA2EB39A26 /* Pods-textdemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-textdemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C17FAB56A813F26F41FE4B3819D27B5F /* Pods-textdemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-textdemo-dummy.m"; sourceTree = "<group>"; };
+		C65B9C6F1B358369C645A082F2DB9C7F /* Pods-textdemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-textdemo-resources.sh"; sourceTree = "<group>"; };
+		C95B626BE79374FC981F47FEA0709339 /* Pods-textdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textdemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D0ECB0EDE0AE024E954D95D3525F399E /* HPTextViewTapGestureRecognizer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HPTextViewTapGestureRecognizer-dummy.m"; sourceTree = "<group>"; };
+		DC7616DB3C9AD5FFC0683FDA514342AF /* HPTextViewTapGestureRecognizer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HPTextViewTapGestureRecognizer-umbrella.h"; sourceTree = "<group>"; };
+		DC993779E2BE09CC9E945A4D54801A33 /* Pods-textdemoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-textdemoUITests.modulemap"; sourceTree = "<group>"; };
+		DEB4FCF0F106FF031E8A626D8FB53A2E /* Pods-textdemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-textdemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E40BC1B245BC6CA180C2F8CF2EA4772C /* Pods-textdemoTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-textdemoTests-frameworks.sh"; sourceTree = "<group>"; };
+		ECCDC8634699B8CCFE70B4CF6EA6F680 /* Pods-textdemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-textdemoTests-dummy.m"; sourceTree = "<group>"; };
+		EED6D92FFF9038C5AB00226913E70FA1 /* HPTextViewTapGestureRecognizer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HPTextViewTapGestureRecognizer.modulemap; sourceTree = "<group>"; };
+		F258AD95B756A2404AF39D9AC91F7A67 /* Pods-textdemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textdemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F73A9C93AE8CB87E5B97679F1437CAE7 /* Pods-textdemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-textdemoTests-umbrella.h"; sourceTree = "<group>"; };
+		FBC822C010776EBA724914B1C5CB7B6E /* Pods_textdemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_textdemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B1B876980761369F3E47A4B098531CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				865436D43B2D1B10727E474A2D7DA3D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C135706EDB0E7BD3A8AE078630A3C070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				140AC3E4C056AC7F06AD8A4CE5C5C990 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90220DC02A5BF0F361071BB070AAE7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30D3F25D628B80324597C4E99ABACCB8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73DEF105B11F12E17FEBE9A99208B88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E9EED59FE3EF48D650108A14CEA68A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		112C7921E3A497328D11F4930CBBC9CA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3997E5D2953ECDF377B85B234FDF550D /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		20B56F0DACD736D0AAF04069D7B01FB6 /* Pods-textdemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				39EB77EDBD4E216A8697038BC8602130 /* Info.plist */,
+				DC993779E2BE09CC9E945A4D54801A33 /* Pods-textdemoUITests.modulemap */,
+				08BD0BBD7CDEE5871F934A99379269CB /* Pods-textdemoUITests-acknowledgements.markdown */,
+				DEB4FCF0F106FF031E8A626D8FB53A2E /* Pods-textdemoUITests-acknowledgements.plist */,
+				790B4E81246670147EC48E210EB34BA3 /* Pods-textdemoUITests-dummy.m */,
+				1DE3BC1FBF26B97F1698822A0DC8A0CC /* Pods-textdemoUITests-frameworks.sh */,
+				A78F490013782E712C35C38C88C275A9 /* Pods-textdemoUITests-resources.sh */,
+				7FD50AD42EEEE9395B8A7C4580BA4E47 /* Pods-textdemoUITests-umbrella.h */,
+				01BD577A17891720DBA100C202B1B8C0 /* Pods-textdemoUITests.debug.xcconfig */,
+				02ADE76DA7CF4806C3E2BF727BD6E953 /* Pods-textdemoUITests.release.xcconfig */,
+			);
+			name = "Pods-textdemoUITests";
+			path = "Target Support Files/Pods-textdemoUITests";
+			sourceTree = "<group>";
+		};
+		2E8F1B820B75BF815AFA8FCB9D2BCD1C /* HPTextViewTapGestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				8A32ECC7FF5C4B8285A5FC747534644D /* HPTextViewTapGestureRecognizer.h */,
+				B85C29E4C2595E57B3A77C61F210D670 /* HPTextViewTapGestureRecognizer.m */,
+				F43CF3ABB58ABF1A22E79FBBD11A2DCB /* Support Files */,
+			);
+			path = HPTextViewTapGestureRecognizer;
+			sourceTree = "<group>";
+		};
+		45759DC573280077BC9C3CDE4F60D152 /* Pods-textdemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F21D173C767F992318332E17085465A /* Info.plist */,
+				7E8A36928AC3D3435E75A32AEACC3FBA /* Pods-textdemoTests.modulemap */,
+				67F4BF97A2D76F27950FC4D6D551E3BD /* Pods-textdemoTests-acknowledgements.markdown */,
+				1289FA53DE75C7853806CD38F1DC40DD /* Pods-textdemoTests-acknowledgements.plist */,
+				ECCDC8634699B8CCFE70B4CF6EA6F680 /* Pods-textdemoTests-dummy.m */,
+				E40BC1B245BC6CA180C2F8CF2EA4772C /* Pods-textdemoTests-frameworks.sh */,
+				22EA807DA757B9E34218B12F223CB4D8 /* Pods-textdemoTests-resources.sh */,
+				F73A9C93AE8CB87E5B97679F1437CAE7 /* Pods-textdemoTests-umbrella.h */,
+				F258AD95B756A2404AF39D9AC91F7A67 /* Pods-textdemoTests.debug.xcconfig */,
+				0936C5FECB73B6AF8605CCB42FAFD7A5 /* Pods-textdemoTests.release.xcconfig */,
+			);
+			name = "Pods-textdemoTests";
+			path = "Target Support Files/Pods-textdemoTests";
+			sourceTree = "<group>";
+		};
+		4AECD438A4F84EA9C9F48915CFE3897A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A939451EEA168602489EE19BD1465C21 /* Pods-textdemo */,
+				45759DC573280077BC9C3CDE4F60D152 /* Pods-textdemoTests */,
+				20B56F0DACD736D0AAF04069D7B01FB6 /* Pods-textdemoUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				FB2376B407CF1CE5009D9D61B97A6704 /* Pods */,
+				E6AC63BE3F8DF71E82C8423848E83B78 /* Products */,
+				4AECD438A4F84EA9C9F48915CFE3897A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A939451EEA168602489EE19BD1465C21 /* Pods-textdemo */ = {
+			isa = PBXGroup;
+			children = (
+				020695A2F46E0E30A478CF18E48AA406 /* Info.plist */,
+				8E09BD905046192E9AF6D4A30E34490C /* Pods-textdemo.modulemap */,
+				B964FD37FF2E6D44B51C24AA2EB39A26 /* Pods-textdemo-acknowledgements.markdown */,
+				531D6DEF334D805A9959E57A55ECE437 /* Pods-textdemo-acknowledgements.plist */,
+				C17FAB56A813F26F41FE4B3819D27B5F /* Pods-textdemo-dummy.m */,
+				066B72232BE7A345254EC3AB3AE7D62D /* Pods-textdemo-frameworks.sh */,
+				C65B9C6F1B358369C645A082F2DB9C7F /* Pods-textdemo-resources.sh */,
+				6F24135F770237AAEBE62A0B32E3E58C /* Pods-textdemo-umbrella.h */,
+				C95B626BE79374FC981F47FEA0709339 /* Pods-textdemo.debug.xcconfig */,
+				A966163D48B1BD002F3DB20B9754765D /* Pods-textdemo.release.xcconfig */,
+			);
+			name = "Pods-textdemo";
+			path = "Target Support Files/Pods-textdemo";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				112C7921E3A497328D11F4930CBBC9CA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6AC63BE3F8DF71E82C8423848E83B78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C07E16F126C159A3130737755568100 /* HPTextViewTapGestureRecognizer.framework */,
+				1B382A37E43FBAE26028AA96D3397883 /* Pods_textdemo.framework */,
+				7F9DABE40039148BF84F94B10D84BD54 /* Pods_textdemoTests.framework */,
+				FBC822C010776EBA724914B1C5CB7B6E /* Pods_textdemoUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F43CF3ABB58ABF1A22E79FBBD11A2DCB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EED6D92FFF9038C5AB00226913E70FA1 /* HPTextViewTapGestureRecognizer.modulemap */,
+				35CF4052668CCD0E19DA5288A753C53C /* HPTextViewTapGestureRecognizer.xcconfig */,
+				D0ECB0EDE0AE024E954D95D3525F399E /* HPTextViewTapGestureRecognizer-dummy.m */,
+				4D57D64333E6630CC295D78ED450A21D /* HPTextViewTapGestureRecognizer-prefix.pch */,
+				DC7616DB3C9AD5FFC0683FDA514342AF /* HPTextViewTapGestureRecognizer-umbrella.h */,
+				62B6C3C55E57C27747E569BB4CDFA166 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HPTextViewTapGestureRecognizer";
+			sourceTree = "<group>";
+		};
+		FB2376B407CF1CE5009D9D61B97A6704 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E8F1B820B75BF815AFA8FCB9D2BCD1C /* HPTextViewTapGestureRecognizer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		65D6EABBCA2AA4CDB9395B65B20E6DEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				312C131BE579FF4FFA31059707C4F3B7 /* Pods-textdemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74E2A24E6933582AA4B86640C6C4EC26 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8DADB6279F8671548D13FDCF7CEEE99 /* Pods-textdemoTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98B478D0316A84E508C40FD08D68BA91 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDA74E932D17D0EEE5468C435FDBEC41 /* HPTextViewTapGestureRecognizer-umbrella.h in Headers */,
+				B5A8F8461ECB7598119DD602D6E047B2 /* HPTextViewTapGestureRecognizer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEF4AFB2DA2B427DC4D8E5058C01E0BC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20FAEA249A753DAFECCF1B96488F22CE /* Pods-textdemoUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		03D303ABC6AB2380A12C0D3CAB7102C2 /* Pods-textdemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 282F4283B1D13A51498C606D3345AD03 /* Build configuration list for PBXNativeTarget "Pods-textdemo" */;
+			buildPhases = (
+				C935F5DF7D5513C9B936875F7B63B307 /* Sources */,
+				C135706EDB0E7BD3A8AE078630A3C070 /* Frameworks */,
+				65D6EABBCA2AA4CDB9395B65B20E6DEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA4C4A0D9098521D1A67CCD649E3B8BA /* PBXTargetDependency */,
+			);
+			name = "Pods-textdemo";
+			productName = "Pods-textdemo";
+			productReference = 1B382A37E43FBAE26028AA96D3397883 /* Pods_textdemo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2954656DA976C64CF9781CF73B63DB93 /* HPTextViewTapGestureRecognizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58CE0DDFD4F38C0E0CE3705A42F25804 /* Build configuration list for PBXNativeTarget "HPTextViewTapGestureRecognizer" */;
+			buildPhases = (
+				0A549C59D7B755AE094E600F50EE2AE0 /* Sources */,
+				1B1B876980761369F3E47A4B098531CB /* Frameworks */,
+				98B478D0316A84E508C40FD08D68BA91 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HPTextViewTapGestureRecognizer;
+			productName = HPTextViewTapGestureRecognizer;
+			productReference = 6C07E16F126C159A3130737755568100 /* HPTextViewTapGestureRecognizer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		49A60C9ABEBD4C7D8A9737C538825026 /* Pods-textdemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56555D21CA1008F6BBAEB6AE5A688763 /* Build configuration list for PBXNativeTarget "Pods-textdemoTests" */;
+			buildPhases = (
+				267953013C51A432C181669AD4B0FE72 /* Sources */,
+				F73DEF105B11F12E17FEBE9A99208B88 /* Frameworks */,
+				74E2A24E6933582AA4B86640C6C4EC26 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-textdemoTests";
+			productName = "Pods-textdemoTests";
+			productReference = 7F9DABE40039148BF84F94B10D84BD54 /* Pods_textdemoTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		75413E2C07E709D3EBDCFAAB939DCC87 /* Pods-textdemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652EE775AFBFEFD06871580FA811DDFA /* Build configuration list for PBXNativeTarget "Pods-textdemoUITests" */;
+			buildPhases = (
+				746C77BB4376E1356A86A75D498EF1AD /* Sources */,
+				D90220DC02A5BF0F361071BB070AAE7D /* Frameworks */,
+				DEF4AFB2DA2B427DC4D8E5058C01E0BC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-textdemoUITests";
+			productName = "Pods-textdemoUITests";
+			productReference = FBC822C010776EBA724914B1C5CB7B6E /* Pods_textdemoUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = E6AC63BE3F8DF71E82C8423848E83B78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2954656DA976C64CF9781CF73B63DB93 /* HPTextViewTapGestureRecognizer */,
+				03D303ABC6AB2380A12C0D3CAB7102C2 /* Pods-textdemo */,
+				49A60C9ABEBD4C7D8A9737C538825026 /* Pods-textdemoTests */,
+				75413E2C07E709D3EBDCFAAB939DCC87 /* Pods-textdemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A549C59D7B755AE094E600F50EE2AE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39CB1D94D15376A719931444762C3FCC /* HPTextViewTapGestureRecognizer-dummy.m in Sources */,
+				69284E8A9A85D1BD4592FD235588816C /* HPTextViewTapGestureRecognizer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		267953013C51A432C181669AD4B0FE72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD98EA04A95D0CEC536CF6F928B9695F /* Pods-textdemoTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		746C77BB4376E1356A86A75D498EF1AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C570D017A21A2EC344404F1847189B5B /* Pods-textdemoUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C935F5DF7D5513C9B936875F7B63B307 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717E2640A0CE4E12C2F74487D6B4D5B5 /* Pods-textdemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA4C4A0D9098521D1A67CCD649E3B8BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HPTextViewTapGestureRecognizer;
+			target = 2954656DA976C64CF9781CF73B63DB93 /* HPTextViewTapGestureRecognizer */;
+			targetProxy = 477A9C506789AE0211BF25E890A608D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1081817DF8BD72BB66DC139A8A71231F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0936C5FECB73B6AF8605CCB42FAFD7A5 /* Pods-textdemoTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-textdemoTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textdemoTests/Pods-textdemoTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_textdemoTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		17F04A56014DBA1B317F1823834C2A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35CF4052668CCD0E19DA5288A753C53C /* HPTextViewTapGestureRecognizer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HPTextViewTapGestureRecognizer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = HPTextViewTapGestureRecognizer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1B90827BBAF06DF5BF00E57757D70EC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A966163D48B1BD002F3DB20B9754765D /* Pods-textdemo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-textdemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textdemo/Pods-textdemo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_textdemo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1D8DCF78DAD8C26A6324BEBADED0143E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35CF4052668CCD0E19DA5288A753C53C /* HPTextViewTapGestureRecognizer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HPTextViewTapGestureRecognizer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HPTextViewTapGestureRecognizer/HPTextViewTapGestureRecognizer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = HPTextViewTapGestureRecognizer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2D5C5EE9E1141D50BDEF627EFC1D56B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F258AD95B756A2404AF39D9AC91F7A67 /* Pods-textdemoTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-textdemoTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textdemoTests/Pods-textdemoTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_textdemoTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		49ACA0E929B90B75CC855E347FABD2D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02ADE76DA7CF4806C3E2BF727BD6E953 /* Pods-textdemoUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-textdemoUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textdemoUITests/Pods-textdemoUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_textdemoUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		70826D0316BF494C1EE58517220C384D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		93CF32D48A7412CAE9135CBD4F9981E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01BD577A17891720DBA100C202B1B8C0 /* Pods-textdemoUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-textdemoUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textdemoUITests/Pods-textdemoUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_textdemoUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		97F2246979B4D71D105F92229C365F55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C95B626BE79374FC981F47FEA0709339 /* Pods-textdemo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-textdemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textdemo/Pods-textdemo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_textdemo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C0CCEA32BF6C138A5554FA5059B22B1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		282F4283B1D13A51498C606D3345AD03 /* Build configuration list for PBXNativeTarget "Pods-textdemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97F2246979B4D71D105F92229C365F55 /* Debug */,
+				1B90827BBAF06DF5BF00E57757D70EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70826D0316BF494C1EE58517220C384D /* Debug */,
+				C0CCEA32BF6C138A5554FA5059B22B1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56555D21CA1008F6BBAEB6AE5A688763 /* Build configuration list for PBXNativeTarget "Pods-textdemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D5C5EE9E1141D50BDEF627EFC1D56B3 /* Debug */,
+				1081817DF8BD72BB66DC139A8A71231F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58CE0DDFD4F38C0E0CE3705A42F25804 /* Build configuration list for PBXNativeTarget "HPTextViewTapGestureRecognizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17F04A56014DBA1B317F1823834C2A03 /* Debug */,
+				1D8DCF78DAD8C26A6324BEBADED0143E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		652EE775AFBFEFD06871580FA811DDFA /* Build configuration list for PBXNativeTarget "Pods-textdemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93CF32D48A7412CAE9135CBD4F9981E1 /* Debug */,
+				49ACA0E929B90B75CC855E347FABD2D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

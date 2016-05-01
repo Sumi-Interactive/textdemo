@@ -71,14 +71,14 @@
     attachment.bounds = CGRectMake(0, 0, 30, 30);
     
     if ([textAttachment.image.accessibilityIdentifier isEqualToString: @"unchecked"])  {
-        attachment.image = [UIImage imageNamed:@"011"];
+        attachment.image = [UIImage imageNamed:@"icon-checkbox-checked"];
         [attachment.image setAccessibilityIdentifier:@"checked"];
         NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
         
         [mutStr insertAttributedString:attachStr atIndex:characterRange.location];
         self.textView.attributedText = [mutStr copy];
     } else if ([textAttachment.image.accessibilityIdentifier isEqualToString:@"checked"]) {
-        attachment.image = [UIImage imageNamed:@"010"];
+        attachment.image = [UIImage imageNamed:@"icon-checkbox-normal"];
         [attachment.image setAccessibilityIdentifier:@"unchecked"];
         NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
         
@@ -122,6 +122,21 @@
         tve.selectedRange = rangeWhenClickCheck;
         rangeWhenClickCheck.location = -1;
     }
+}
+
+#pragma mark - Button Actions
+
+- (IBAction)alertTextButtonAction:(id)sender {
+    NSAttributedString *text = self.textView.attributedText;
+    
+    NSLog(@"%@", text);
+    
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"text content" message:text preferredStyle:UIAlertControllerStyleAlert];
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        
+//    }]];
+//    
+//    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
