@@ -16,7 +16,7 @@
     }
     return self;
 }
--(int) getWhichParaCursonIn {
+-(int) getWhichParaCursorIn {
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     int count = (int)result.count;
     int loc = (int)currentTextView.selectedRange.location;
@@ -39,7 +39,7 @@
     return row;
 }
 
--(int) getParaLocCursonIn {
+-(int) getParaLocCursorIn {
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     int count = (int)result.count;
     int loc = (int)currentTextView.selectedRange.location;

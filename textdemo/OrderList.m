@@ -14,8 +14,8 @@
     if (range.location==0) return;
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     
-    int row = [self getWhichParaCursonIn];
-    int locOfPara = [self getParaLocCursonIn];
+    int row = [self getWhichParaCursorIn];
+    int locOfPara = [self getParaLocCursorIn];
     int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+2;
     if (locOfPara+locOfIndex==range.location) {
         NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
@@ -47,7 +47,7 @@
 
 -(BOOL)isThisLineEmpty:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-    int row  = [self getWhichParaCursonIn];
+    int row  = [self getWhichParaCursorIn];
     if([[result[row] componentsSeparatedByString:@"."] count]==1)
         return FALSE;
     int number = (int)[result[row] componentsSeparatedByString:@"."][0].intValue;
@@ -63,8 +63,8 @@
     [self deleteParaIndex];
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     
-    int row = [self getWhichParaCursonIn];
-    int loc = [self getParaLocCursonIn];
+    int row = [self getWhichParaCursorIn];
+    int loc = [self getParaLocCursorIn];
     
     int i = 1 ;
     
@@ -107,8 +107,8 @@
         return;
     NSRange range = currentTextView.selectedRange;
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-    int row = [self getWhichParaCursonIn];
-    int loc = [self getParaLocCursonIn];
+    int row = [self getWhichParaCursorIn];
+    int loc = [self getParaLocCursorIn];
     int locOfIndex= (int)[result[row] componentsSeparatedByString:@"."][0].length+1;
 
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
@@ -120,7 +120,7 @@
 
 -(BOOL)isParaContainIndex:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
-    int row = [self getWhichParaCursonIn];
+    int row = [self getWhichParaCursorIn];
     if ([result[row] componentsSeparatedByString:@"."][0].intValue!=0&&[[result[row] componentsSeparatedByString:@"."] count]!=1) {
         return TRUE;
     } else {

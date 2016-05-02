@@ -24,11 +24,11 @@
 -(BOOL)isThisLineEmpty:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     
-    int row = [self getWhichParaCursonIn];
+    int row = [self getWhichParaCursorIn];
     if ([result[row] length]==0)
         return FALSE;
     
-    int loc = [self getParaLocCursonIn];
+    int loc = [self getParaLocCursorIn];
     NSMutableAttributedString *mutStr = [currentTextView.attributedText copy];
     if([mutStr containsAttachmentsInRange:NSMakeRange(loc,1)]==TRUE) {
         if (range.location==loc+1) {
@@ -50,14 +50,14 @@
     [attachment.image setAccessibilityIdentifier:@"unchecked"];
     NSAttributedString * attachStr = [NSAttributedString attributedStringWithAttachment:attachment];
     
-    int loc = [self getParaLocCursonIn];
+    int loc = [self getParaLocCursorIn];
     [mutStr insertAttributedString:attachStr atIndex:loc];
     currentTextView.attributedText = [mutStr copy];
 }
 
 -(void)deleteParaIndex {
     if([self isParaContainIndex:currentTextView.selectedRange]==FALSE) return;
-    int loc = [self getParaLocCursonIn];
+    int loc = [self getParaLocCursorIn];
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
     [mutStr deleteCharactersInRange:NSMakeRange(loc,1)];
     currentTextView.attributedText = [mutStr copy];
@@ -65,7 +65,7 @@
 }
 
 -(BOOL)isParaContainIndex:(NSRange)range {
-    int loc = [self getParaLocCursonIn];
+    int loc = [self getParaLocCursorIn];
     NSMutableAttributedString *str = [currentTextView.attributedText mutableCopy];
     if(loc+1<=str.length &&[str containsAttachmentsInRange:NSMakeRange(loc, 1)]==TRUE) {
         return TRUE;

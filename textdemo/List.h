@@ -14,9 +14,9 @@
     UITextView     *currentTextView;
 }
 
--(int)getWhichParaCursonIn;
+-(int)getWhichParaCursorIn;
 
--(int)getParaLocCursonIn;
+-(int)getParaLocCursorIn;
 
 -(void)editAttributeString:(NSString*)text :(NSRange)range;
 

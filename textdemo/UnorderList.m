@@ -24,7 +24,7 @@
 
 -(BOOL)isThisLineEmpty:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
-    int row = [self getWhichParaCursonIn];
+    int row = [self getWhichParaCursorIn];
     if([result[row] length]==2) {
         return TRUE;
     } else {
@@ -36,8 +36,8 @@
     [self deleteParaIndex];
     NSMutableArray *result = [[currentTextView.attributedText.string  componentsSeparatedByString:@"\n"] mutableCopy];
     
-    int row = [self getWhichParaCursonIn];
-    int loc = [self getParaLocCursonIn];
+    int row = [self getWhichParaCursorIn];
+    int loc = [self getParaLocCursorIn];
     
     NSString *replace = [NSString stringWithFormat:@"\u2013 %@",result[row]];
     
@@ -49,7 +49,7 @@
 -(void)deleteParaIndex {
     NSRange range = currentTextView.selectedRange;
     if([self isParaContainIndex:currentTextView.selectedRange]==FALSE) return;
-    int loc = [self getParaLocCursonIn];
+    int loc = [self getParaLocCursorIn];
     NSMutableAttributedString * mutStr = [currentTextView.attributedText mutableCopy];
     [mutStr deleteCharactersInRange:NSMakeRange(loc,2)];
     currentTextView.attributedText = [mutStr copy];
@@ -59,7 +59,7 @@
 
 -(BOOL)isParaContainIndex:(NSRange)range {
     NSMutableArray *result = [[currentTextView.attributedText.string componentsSeparatedByString:@"\n"] mutableCopy];
-    int row = [self getWhichParaCursonIn];
+    int row = [self getWhichParaCursorIn];
     if([result[row] length]>=2 && [[result[row] substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"\u2013 "]) {
         return TRUE;
     } else {
